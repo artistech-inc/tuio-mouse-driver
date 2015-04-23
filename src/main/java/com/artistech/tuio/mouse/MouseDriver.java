@@ -37,16 +37,16 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.event.InputEvent;
 import java.text.MessageFormat;
+import java.util.ArrayList;
+import org.apache.commons.lang3.tuple.MutableTriple;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 public class MouseDriver implements TuioListener {
 
     private Robot robot = null;
-    private int width = 0;
-    private int height = 0;
-    private long mouse = -1;
-    private long lclick = -1;
+
+    private final ArrayList<MutableTriple<Long, Integer, Integer>> curs = new ArrayList<MutableTriple<Long, Integer, Integer>>();
 
     private static final Log logger = LogFactory.getLog(MouseDriver.class);
 
@@ -94,14 +94,26 @@ public class MouseDriver implements TuioListener {
     public void addTuioCursor(TuioCursor tcur) {
         logger.trace(MessageFormat.format("add tuio cursor id: {0}", tcur.getCursorID()));
 
-        if (mouse < 0) {
-            mouse = tcur.getSessionID();
+        int width = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+        int height = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+
+        boolean found = false;
+        for (MutableTriple<Long, Integer, Integer> trip : curs) {
+            if (trip.getLeft() == tcur.getSessionID()) {
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            curs.add(new MutableTriple<Long, Integer, Integer>(tcur.getSessionID(), tcur.getScreenX(width), tcur.getScreenY(height)));
+        }
+
+        if (curs.size() == 1) {
             logger.debug(MessageFormat.format("add mouse move: ({0}, {1})", new Object[]{tcur.getScreenX(width), tcur.getScreenY(height)}));
             robot.mouseMove(tcur.getScreenX(width), tcur.getScreenY(height));
         } else {
             logger.debug(MessageFormat.format("add mouse press: {0}", tcur.getCursorID()));
-            if (lclick < 0) {
-                lclick = tcur.getSessionID();
+            if (curs.size() == 2) {
                 robot.mousePress(InputEvent.BUTTON1_MASK);
             } else {
                 robot.mousePress(InputEvent.BUTTON3_MASK);
@@ -118,9 +130,19 @@ public class MouseDriver implements TuioListener {
     public void updateTuioCursor(TuioCursor tcur) {
         logger.trace(MessageFormat.format("update tuio cursor id: {0}", tcur.getCursorID()));
 
-        if (mouse == tcur.getSessionID()) {
+        int width = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+        int height = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+
+        if (!curs.isEmpty() && curs.get(0).getLeft() == tcur.getSessionID()) {
             logger.debug(MessageFormat.format("update mouse move: ({0}, {1})", new Object[]{tcur.getScreenX(width), tcur.getScreenY(height)}));
             robot.mouseMove(tcur.getScreenX(width), tcur.getScreenY(height));
+        }
+        for (MutableTriple<Long, Integer, Integer> trip : curs) {
+            if (trip.getLeft() == tcur.getSessionID()) {
+                trip.setMiddle(tcur.getScreenX(width));
+                trip.setRight(tcur.getScreenY(height));
+                break;
+            }
         }
     }
 
@@ -132,14 +154,24 @@ public class MouseDriver implements TuioListener {
     public void removeTuioCursor(TuioCursor tcur) {
         logger.trace(MessageFormat.format("remove tuio cursor id: {0}", tcur.getCursorID()));
 
-        if (mouse == tcur.getSessionID()) {
-            mouse = -1;
-        } else {
+        if (!curs.isEmpty() && curs.get(0).getLeft() == tcur.getSessionID()) {
+            robot.mouseRelease(InputEvent.BUTTON1_MASK);
+        } else if (curs.size() == 2) {
             logger.debug(MessageFormat.format("remove mouse release: {0}", tcur.getCursorID()));
-            if (lclick == tcur.getSessionID()) {
-                lclick = -1;
-                robot.mouseRelease(InputEvent.BUTTON1_MASK);
+            robot.mouseRelease(InputEvent.BUTTON1_MASK);
+        }
+        MutableTriple t = null;
+        for (MutableTriple<Long, Integer, Integer> trip : curs) {
+            if (trip.getLeft() == tcur.getSessionID()) {
+                t = trip;
+                break;
             }
+        }
+        if (t != null) {
+            curs.remove(t);
+        }
+        if (!curs.isEmpty()) {
+            robot.mouseMove(curs.get(0).getMiddle(), curs.get(0).getRight());
         }
     }
 
@@ -150,9 +182,6 @@ public class MouseDriver implements TuioListener {
      */
     public MouseDriver() throws AWTException {
         robot = new Robot();
-
-        width = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-        height = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
     }
 
     /**
