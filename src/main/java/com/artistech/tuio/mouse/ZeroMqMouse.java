@@ -15,12 +15,13 @@
  */
 package com.artistech.tuio.mouse;
 
-import TUIO.TuioCursor;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.awt.AWTException;
 import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectInputStream;
+import java.util.HashMap;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.zeromq.ZMQ;
@@ -29,8 +30,13 @@ import org.zeromq.ZMQ;
  * Durable subscriber
  */
 public class ZeroMqMouse {
-    
+
     private final static Log logger = LogFactory.getLog(ZeroMqMouse.class);
+    private final static ObjectMapper mapper = new ObjectMapper();
+
+    static {
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    }
 
     public static void main(String[] args) throws AWTException, java.io.IOException {
         if (args.length < 1) {
@@ -51,52 +57,105 @@ public class ZeroMqMouse {
         String msg = "";
         MouseDriver md = new MouseDriver();
         while (!msg.equalsIgnoreCase("END")) {
-            byte[] recv = subscriber.recv(0);
-            ByteArrayInputStream bis = new ByteArrayInputStream(recv);
-            ObjectInput in = null;
             boolean success = false;
+            byte[] recv = subscriber.recv(0);
             try {
+                ByteArrayInputStream bis = new ByteArrayInputStream(recv);
                 //Try reading the data as a serialized Java object:
-                in = new ObjectInputStream(bis);
+                ObjectInput in = new ObjectInputStream(bis);
                 Object o = in.readObject();
                 //get the state: add/remove/update
-                if (TuioCursor.class.isAssignableFrom(o.getClass())) {
-                    TuioCursor tcur = (TuioCursor) o;
+                if (TUIO.TuioCursor.class.isAssignableFrom(o.getClass())) {
+                    TUIO.TuioCursor tcur = (TUIO.TuioCursor) o;
                     switch (tcur.getTuioState()) {
-                        case TuioCursor.TUIO_ADDED:
+                        case TUIO.TuioCursor.TUIO_ADDED:
                             md.addTuioCursor(tcur);
                             break;
-                        case TuioCursor.TUIO_REMOVED:
+                        case TUIO.TuioCursor.TUIO_REMOVED:
                             md.removeTuioCursor(tcur);
                             break;
                         default:
                             md.updateTuioCursor(tcur);
                             break;
                     }
+                } else if (TUIO.TuioBlob.class.isAssignableFrom(o.getClass())) {
+                    TUIO.TuioBlob tblb = (TUIO.TuioBlob) o;
+                    switch (tblb.getTuioState()) {
+                        case TUIO.TuioBlob.TUIO_ADDED:
+                            md.addTuioBlob(tblb);
+                            break;
+                        case TUIO.TuioBlob.TUIO_REMOVED:
+                            md.removeTuioBlob(tblb);
+                            break;
+                        default:
+                            md.updateTuioBlob(tblb);
+                            break;
+                    }
+                } else if (TUIO.TuioObject.class.isAssignableFrom(o.getClass())) {
+                    TUIO.TuioObject tobj = (TUIO.TuioObject) o;
+                    switch (tobj.getTuioState()) {
+                        case TUIO.TuioObject.TUIO_ADDED:
+                            md.addTuioObject(tobj);
+                            break;
+                        case TUIO.TuioObject.TUIO_REMOVED:
+                            md.removeTuioObject(tobj);
+                            break;
+                        default:
+                            md.updateTuioObject(tobj);
+                            break;
+                    }
                 }
                 success = true;
+                bis.close();
             } catch (java.io.IOException ex) {
-                logger.error(null, ex);
             } catch (ClassNotFoundException ex) {
-                logger.error(null, ex);
             } finally {
-                try {
-                    bis.close();
-                } catch (IOException ex) {
-                    // ignore close exception
-                }
-                try {
-                    if (in != null) {
-                        in.close();
-                    }
-                } catch (IOException ex) {
-                    // ignore close exception
-                }
             }
             //try reading the data as a string (JSON)
             if (!success) {
                 msg = new String(recv);
-                System.out.println(msg);
+                HashMap val = mapper.readValue(msg, HashMap.class);
+                String c = (String) val.get("class");
+                if (c.equals("TUIO.TuioCursor")) {
+                    TUIO.TuioCursor tcur = mapper.readValue(msg, TUIO.TuioCursor.class);
+                    switch (tcur.getTuioState()) {
+                        case TUIO.TuioCursor.TUIO_ADDED:
+                            md.addTuioCursor(tcur);
+                            break;
+                        case TUIO.TuioCursor.TUIO_REMOVED:
+                            md.removeTuioCursor(tcur);
+                            break;
+                        default:
+                            md.updateTuioCursor(tcur);
+                            break;
+                    }
+                } else if (c.equals("TUIO.TuioBlob")) {
+                    TUIO.TuioBlob tblb = mapper.readValue(msg, TUIO.TuioBlob.class);
+                    switch (tblb.getTuioState()) {
+                        case TUIO.TuioBlob.TUIO_ADDED:
+                            md.addTuioBlob(tblb);
+                            break;
+                        case TUIO.TuioBlob.TUIO_REMOVED:
+                            md.removeTuioBlob(tblb);
+                            break;
+                        default:
+                            md.updateTuioBlob(tblb);
+                            break;
+                    }
+                } else if (c.equals("TUIO.TuioObject")) {
+                    TUIO.TuioObject tobj = mapper.readValue(msg, TUIO.TuioObject.class);
+                    switch (tobj.getTuioState()) {
+                        case TUIO.TuioObject.TUIO_ADDED:
+                            md.addTuioObject(tobj);
+                            break;
+                        case TUIO.TuioObject.TUIO_REMOVED:
+                            md.removeTuioObject(tobj);
+                            break;
+                        default:
+                            md.updateTuioObject(tobj);
+                            break;
+                    }
+                }
             }
         }
     }
