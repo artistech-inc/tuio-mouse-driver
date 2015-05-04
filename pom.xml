@@ -46,7 +46,7 @@
                     <family>unix</family>
                 </os>
                 <file>
-                    <exists>/usr/lib/libjzmq.dynlib</exists>
+                    <exists>/usr/lib/libjzmq.so</exists>
                 </file>
             </activation>   
             <dependencies>
