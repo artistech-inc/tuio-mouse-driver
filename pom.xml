@@ -37,6 +37,84 @@
         <developerConnection>scm:git:git@github.com/artistech-inc/tuio-mouse-driver.git</developerConnection>
         <url>https://github.com/artistech-inc/tuio-mouse-driver</url>
     </scm>
+    <profiles>
+        <profile>
+            <id>jzmq-linux</id>
+            <activation>
+                <os>
+                    <name>linux</name>
+                    <family>unix</family>
+                </os>
+                <file>
+                    <exists>/usr/lib/libjzmq.dynlib</exists>
+                </file>
+            </activation>   
+            <dependencies>
+                <dependency>
+                    <groupId>org.zeromq</groupId>
+                    <artifactId>jzmq</artifactId>
+                    <version>3.1.0</version>
+                </dependency>
+            </dependencies>
+        </profile>        
+        <profile>
+            <id>jzmq-mac</id>
+            <activation>
+                <os>
+                    <name>linux</name>
+                    <family>unix</family>
+                </os>
+                <file>
+                    <exists>/usr/lib/libjzmq.dynlib</exists>
+                </file>
+            </activation>   
+            <dependencies>
+                <dependency>
+                    <groupId>org.zeromq</groupId>
+                    <artifactId>jzmq</artifactId>
+                    <version>3.1.0</version>
+                </dependency>
+            </dependencies>
+        </profile>        
+        <profile>
+            <id>jeromq-mac</id>
+            <activation>
+                <os>
+                    <name>Mac OS X</name>
+                    <family>mac</family>
+                </os>
+                <file>
+                    <missing>/usr/lib/libjzmq.dynlib</missing>
+                </file>
+            </activation>   
+            <dependencies>
+                <dependency>
+                    <groupId>org.zeromq</groupId>
+                    <artifactId>jzmq</artifactId>
+                    <version>3.1.0</version>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>jeromq</id>
+            <activation>
+                <os>
+                    <name>linux</name>
+                    <family>unix</family>
+                </os>
+                <file>
+                    <missing>/usr/lib/libjzmq.so</missing>
+                </file>
+            </activation>   
+            <dependencies>
+                <dependency>
+                    <groupId>org.zeromq</groupId>
+                    <artifactId>jeromq</artifactId>
+                    <version>0.3.4</version>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
     <build>
         <plugins>
             <plugin>
@@ -94,11 +172,6 @@
             <groupId>com.artistech</groupId>
             <artifactId>tuio-lib</artifactId>
             <version>1.1.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.zeromq</groupId>
-            <artifactId>jeromq</artifactId>
-            <version>0.3.4</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>

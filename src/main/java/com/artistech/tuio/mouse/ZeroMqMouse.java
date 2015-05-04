@@ -18,12 +18,12 @@ package com.artistech.tuio.mouse;
 import TUIO.TuioCursor;
 import java.awt.AWTException;
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.zeromq.ZMQ;
-import org.zeromq.ZMQException.IOException;
 
 /**
  * Durable subscriber
