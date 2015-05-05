@@ -1,0 +1,85 @@
+package TUIO;
+
+option java_package = "TUIO";
+option java_outer_classname = "TuioProtos";
+
+message Time {
+    required int64 seconds = 1;
+    required int64 microseconds = 2;
+    required int64 frameID = 3;
+}
+
+message Cursor {
+
+    required float x = 1;
+    required float y = 2;
+    optional Time tuioTime = 3;
+    optional Time startTime = 4;
+
+    required int64 sessionID = 5;
+    optional float xSpeed = 6;
+    optional float ySpeed = 7;
+    optional float motionSpeed = 8;
+    optional float motionAccel = 9;
+    repeated Point path = 10;
+    required int32 tuioState = 11;
+
+    required int32 cursorID = 12;
+
+}
+
+message Blob {
+
+    required float x = 1;
+    required float y = 2;
+    optional Time tuioTime = 3;
+    optional Time startTime = 4;
+
+    required int64 sessionID = 5;
+    optional float xSpeed = 6;
+    optional float ySpeed = 7;
+    optional float motionSpeed = 8;
+    optional float motionAccel = 9;
+    repeated Point path = 10;
+    required int32 tuioState = 11;
+
+    required int32 blobID = 12;
+    required float angle = 13;
+    required float width = 14;
+    required float height = 15;
+    required float area = 16;
+    required float rotationSpeed = 17;
+    required float rotationAccel = 18;
+
+}
+
+message Object {
+
+    required float x = 1;
+    required float y = 2;
+    optional Time tuioTime = 3;
+    optional Time startTime = 4;
+
+    required int64 sessionID = 5;
+    optional float xSpeed = 6;
+    optional float ySpeed = 7;
+    optional float motionSpeed = 8;
+    optional float motionAccel = 9;
+    repeated Point path = 10;
+    required int32 tuioState = 11;
+
+    required int32 symbolID = 12;
+    required float angle = 13;
+    required float rotationSpeed = 14;
+    required float rotationAccel = 15;
+
+}
+
+message Point {
+
+    required float xPos = 1;
+    required float yPos = 2;
+    optional Time tuioTime = 3;
+    optional Time startTime = 4;
+
+}

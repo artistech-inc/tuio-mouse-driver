@@ -15,13 +15,25 @@
  */
 package com.artistech.tuio.mouse;
 
+import TUIO.TuioCursor;
+import TUIO.TuioObject;
+import TUIO.TuioPoint;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.protobuf.GeneratedMessage;
 import java.awt.AWTException;
+import java.beans.BeanInfo;
+import java.beans.Introspector;
+import java.beans.PropertyDescriptor;
 import java.io.ByteArrayInputStream;
 import java.io.ObjectInput;
 import java.io.ObjectInputStream;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.apache.commons.lang3.ClassUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.zeromq.ZMQ;
@@ -65,98 +77,193 @@ public class ZeroMqMouse {
                 ObjectInput in = new ObjectInputStream(bis);
                 Object o = in.readObject();
                 //get the state: add/remove/update
-                if (TUIO.TuioCursor.class.isAssignableFrom(o.getClass())) {
-                    TUIO.TuioCursor tcur = (TUIO.TuioCursor) o;
-                    switch (tcur.getTuioState()) {
-                        case TUIO.TuioCursor.TUIO_ADDED:
-                            md.addTuioCursor(tcur);
-                            break;
-                        case TUIO.TuioCursor.TUIO_REMOVED:
-                            md.removeTuioCursor(tcur);
-                            break;
-                        default:
-                            md.updateTuioCursor(tcur);
-                            break;
-                    }
-                } else if (TUIO.TuioBlob.class.isAssignableFrom(o.getClass())) {
-                    TUIO.TuioBlob tblb = (TUIO.TuioBlob) o;
-                    switch (tblb.getTuioState()) {
-                        case TUIO.TuioBlob.TUIO_ADDED:
-                            md.addTuioBlob(tblb);
-                            break;
-                        case TUIO.TuioBlob.TUIO_REMOVED:
-                            md.removeTuioBlob(tblb);
-                            break;
-                        default:
-                            md.updateTuioBlob(tblb);
-                            break;
-                    }
-                } else if (TUIO.TuioObject.class.isAssignableFrom(o.getClass())) {
-                    TUIO.TuioObject tobj = (TUIO.TuioObject) o;
-                    switch (tobj.getTuioState()) {
-                        case TUIO.TuioObject.TUIO_ADDED:
-                            md.addTuioObject(tobj);
-                            break;
-                        case TUIO.TuioObject.TUIO_REMOVED:
-                            md.removeTuioObject(tobj);
-                            break;
-                        default:
-                            md.updateTuioObject(tobj);
-                            break;
-                    }
+                if (TuioPoint.class.isAssignableFrom(o.getClass())) {
+                    TuioPoint pt = (TuioPoint) o;
+                    process(pt, md);
                 }
+
                 success = true;
                 bis.close();
             } catch (java.io.IOException ex) {
             } catch (ClassNotFoundException ex) {
             } finally {
             }
+
+            if (!success) {
+//                String str = new String(recv);
+
+                com.google.protobuf.GeneratedMessage message = null;
+                try {
+                    message = TUIO.TuioProtos.Cursor.parseFrom(recv);
+                    success = true;
+                } catch (Exception ex) {
+                }
+                if (!success) {
+                    try {
+                        message = TUIO.TuioProtos.Blob.parseFrom(recv);
+                        success = true;
+                    } catch (Exception ex) {
+                    }
+                }
+                if (!success) {
+                    try {
+                        message = TUIO.TuioProtos.Object.parseFrom(recv);
+                        success = true;
+                    } catch (Exception ex) {
+                    }
+                }
+                if (!success) {
+                    try {
+                        message = TUIO.TuioProtos.Time.parseFrom(recv);
+                        success = true;
+                    } catch (Exception ex) {
+                    }
+                }
+                if (message == null) {
+                    success = false;
+                }
+                if (success) {
+                    Object o = convertFromProtobuf(message);
+                    if (o != null && TuioPoint.class.isAssignableFrom(o.getClass())) {
+                        TuioPoint pt = (TuioPoint) o;
+                        process(pt, md);
+                        success = true;
+                    }
+                }
+            }
+
             //try reading the data as a string (JSON)
             if (!success) {
                 msg = new String(recv);
                 HashMap val = mapper.readValue(msg, HashMap.class);
                 String c = (String) val.get("class");
+                TuioPoint pt = null;
                 if (c.equals("TUIO.TuioCursor")) {
-                    TUIO.TuioCursor tcur = mapper.readValue(msg, TUIO.TuioCursor.class);
-                    switch (tcur.getTuioState()) {
-                        case TUIO.TuioCursor.TUIO_ADDED:
-                            md.addTuioCursor(tcur);
-                            break;
-                        case TUIO.TuioCursor.TUIO_REMOVED:
-                            md.removeTuioCursor(tcur);
-                            break;
-                        default:
-                            md.updateTuioCursor(tcur);
-                            break;
-                    }
+                    pt = mapper.readValue(msg, TUIO.TuioCursor.class);
                 } else if (c.equals("TUIO.TuioBlob")) {
-                    TUIO.TuioBlob tblb = mapper.readValue(msg, TUIO.TuioBlob.class);
-                    switch (tblb.getTuioState()) {
-                        case TUIO.TuioBlob.TUIO_ADDED:
-                            md.addTuioBlob(tblb);
-                            break;
-                        case TUIO.TuioBlob.TUIO_REMOVED:
-                            md.removeTuioBlob(tblb);
-                            break;
-                        default:
-                            md.updateTuioBlob(tblb);
-                            break;
-                    }
+                    pt = mapper.readValue(msg, TUIO.TuioBlob.class);
                 } else if (c.equals("TUIO.TuioObject")) {
-                    TUIO.TuioObject tobj = mapper.readValue(msg, TUIO.TuioObject.class);
-                    switch (tobj.getTuioState()) {
-                        case TUIO.TuioObject.TUIO_ADDED:
-                            md.addTuioObject(tobj);
-                            break;
-                        case TUIO.TuioObject.TUIO_REMOVED:
-                            md.removeTuioObject(tobj);
-                            break;
-                        default:
-                            md.updateTuioObject(tobj);
-                            break;
-                    }
+                    pt = mapper.readValue(msg, TUIO.TuioObject.class);
+                }
+                if (pt != null) {
+                    process(pt, md);
+                    success = true;
                 }
             }
         }
     }
+
+    public static void process(TUIO.TuioPoint pt, MouseDriver md) {
+        if (TUIO.TuioCursor.class.isAssignableFrom(pt.getClass())) {
+            TUIO.TuioCursor tcur = (TUIO.TuioCursor) pt;
+            switch (tcur.getTuioState()) {
+                case TUIO.TuioCursor.TUIO_ADDED:
+                    md.addTuioCursor(tcur);
+                    break;
+                case TUIO.TuioCursor.TUIO_REMOVED:
+                    md.removeTuioCursor(tcur);
+                    break;
+                default:
+                    md.updateTuioCursor(tcur);
+                    break;
+            }
+        } else if (TUIO.TuioBlob.class.isAssignableFrom(pt.getClass())) {
+            TUIO.TuioBlob tblb = (TUIO.TuioBlob) pt;
+            switch (tblb.getTuioState()) {
+                case TUIO.TuioBlob.TUIO_ADDED:
+                    md.addTuioBlob(tblb);
+                    break;
+                case TUIO.TuioBlob.TUIO_REMOVED:
+                    md.removeTuioBlob(tblb);
+                    break;
+                default:
+                    md.updateTuioBlob(tblb);
+                    break;
+            }
+        } else if (TUIO.TuioObject.class.isAssignableFrom(pt.getClass())) {
+            TUIO.TuioObject tobj = (TUIO.TuioObject) pt;
+            switch (tobj.getTuioState()) {
+                case TUIO.TuioObject.TUIO_ADDED:
+                    md.addTuioObject(tobj);
+                    break;
+                case TUIO.TuioObject.TUIO_REMOVED:
+                    md.removeTuioObject(tobj);
+                    break;
+                default:
+                    md.updateTuioObject(tobj);
+                    break;
+            }
+        }
+    }
+
+    public static Object convertFromProtobuf(GeneratedMessage obj) {
+        Object target;
+
+        if (TUIO.TuioProtos.Blob.class.isAssignableFrom(obj.getClass())) {
+            target = new TUIO.TuioBlob();
+        } else if (TUIO.TuioProtos.Time.class.isAssignableFrom(obj.getClass())) {
+            target = new TUIO.TuioTime();
+        } else if (TUIO.TuioProtos.Cursor.class.isAssignableFrom(obj.getClass())) {
+            target = new TuioCursor();
+        } else if (TUIO.TuioProtos.Object.class.isAssignableFrom(obj.getClass())) {
+            target = new TuioObject();
+        } else {
+            return null;
+        }
+
+        try {
+            PropertyDescriptor[] targetProps = Introspector.getBeanInfo(target.getClass()).getPropertyDescriptors();
+
+            BeanInfo beanInfo = Introspector.getBeanInfo(obj.getClass());
+            PropertyDescriptor[] messageProps = beanInfo.getPropertyDescriptors();
+            Method[] methods = obj.getClass().getMethods();
+
+            for (PropertyDescriptor targetProp : targetProps) {
+                for (PropertyDescriptor messageProp : messageProps) {
+                    if (targetProp.getName().equals(messageProp.getName())) {
+                        Method writeMethod = targetProp.getWriteMethod();
+                        Method readMethod = null;
+                        for (Method m : methods) {
+                            if (writeMethod != null && m.getName().equals(writeMethod.getName().replaceFirst("set", "get"))) {
+                                readMethod = m;
+                                break;
+                            }
+                        }
+                        try {
+                            if (readMethod != null && targetProp.getReadMethod() != null) {
+//                                System.out.println("Prop2 Name!: " + messageProp.getName());
+                                boolean primitiveOrWrapper = ClassUtils.isPrimitiveOrWrapper(targetProp.getReadMethod().getReturnType());
+
+                                if (primitiveOrWrapper) {
+                                    writeMethod.invoke(target, messageProp.getReadMethod().invoke(obj));
+                                } else {
+                                    if (GeneratedMessage.class.isAssignableFrom(messageProp.getReadMethod().getReturnType())) {
+                                        GeneratedMessage invoke = (GeneratedMessage) messageProp.getReadMethod().invoke(obj);
+                                        Object val = convertFromProtobuf(invoke);
+                                        writeMethod.invoke(target, val);
+                                    }
+//                                    System.out.println("Prop1 Name!: " + targetProp.getName());
+                                }
+                            }
+                        } catch (NullPointerException ex) {
+                            //Logger.getLogger(ZeroMqMouse.class.getName()).log(Level.SEVERE, null, ex);
+                        } catch (IllegalArgumentException ex) {
+                            logger.error(ex);
+                        } catch (SecurityException ex) {
+                            logger.error(ex);
+                        } catch (IllegalAccessException ex) {
+                            logger.error(ex);
+                        } catch (InvocationTargetException ex) {
+                            logger.error(ex);
+                        }
+                        break;
+                    }
+                }
+            }
+        } catch (java.beans.IntrospectionException ex) {
+            logger.fatal(ex);
+        }
+        return target;
+    }
+
 }
