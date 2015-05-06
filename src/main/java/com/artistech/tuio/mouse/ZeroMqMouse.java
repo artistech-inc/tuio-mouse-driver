@@ -15,25 +15,16 @@
  */
 package com.artistech.tuio.mouse;
 
-import TUIO.TuioCursor;
-import TUIO.TuioObject;
 import TUIO.TuioPoint;
+import com.artistech.protobuf.ProtoConverter;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.protobuf.GeneratedMessage;
 import java.awt.AWTException;
-import java.beans.BeanInfo;
-import java.beans.Introspector;
-import java.beans.PropertyDescriptor;
 import java.io.ByteArrayInputStream;
 import java.io.ObjectInput;
 import java.io.ObjectInputStream;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.HashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.apache.commons.lang3.ClassUtils;
+import java.util.ServiceLoader;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.zeromq.ZMQ;
@@ -55,6 +46,8 @@ public class ZeroMqMouse {
             System.err.println("Must specify ip:port value for the ZeroMQ publish server.");
             return;
         }
+        
+        ServiceLoader<ProtoConverter> services = ServiceLoader.load(ProtoConverter.class);
 
         ZMQ.Context context = ZMQ.context(1);
 
@@ -72,20 +65,20 @@ public class ZeroMqMouse {
             boolean success = false;
             byte[] recv = subscriber.recv(0);
             try {
-                ByteArrayInputStream bis = new ByteArrayInputStream(recv);
                 //Try reading the data as a serialized Java object:
-                ObjectInput in = new ObjectInputStream(bis);
-                Object o = in.readObject();
-                //get the state: add/remove/update
-                if (TuioPoint.class.isAssignableFrom(o.getClass())) {
-                    TuioPoint pt = (TuioPoint) o;
-                    process(pt, md);
+                try (ByteArrayInputStream bis = new ByteArrayInputStream(recv)) {
+                    //Try reading the data as a serialized Java object:
+                    ObjectInput in = new ObjectInputStream(bis);
+                    Object o = in.readObject();
+                    //get the state: add/remove/update
+                    if (TuioPoint.class.isAssignableFrom(o.getClass())) {
+                        TuioPoint pt = (TuioPoint) o;
+                        process(pt, md);
+                    }
+                    
+                    success = true;
                 }
-
-                success = true;
-                bis.close();
-            } catch (java.io.IOException ex) {
-            } catch (ClassNotFoundException ex) {
+            } catch (java.io.IOException | ClassNotFoundException ex) {
             } finally {
             }
 
@@ -94,27 +87,27 @@ public class ZeroMqMouse {
 
                 com.google.protobuf.GeneratedMessage message = null;
                 try {
-                    message = TUIO.TuioProtos.Cursor.parseFrom(recv);
+                    message = com.artistech.protobuf.TuioProtos.Cursor.parseFrom(recv);
                     success = true;
                 } catch (Exception ex) {
                 }
                 if (!success) {
                     try {
-                        message = TUIO.TuioProtos.Blob.parseFrom(recv);
+                        message = com.artistech.protobuf.TuioProtos.Blob.parseFrom(recv);
                         success = true;
                     } catch (Exception ex) {
                     }
                 }
                 if (!success) {
                     try {
-                        message = TUIO.TuioProtos.Object.parseFrom(recv);
+                        message = com.artistech.protobuf.TuioProtos.Object.parseFrom(recv);
                         success = true;
                     } catch (Exception ex) {
                     }
                 }
                 if (!success) {
                     try {
-                        message = TUIO.TuioProtos.Time.parseFrom(recv);
+                        message = com.artistech.protobuf.TuioProtos.Time.parseFrom(recv);
                         success = true;
                     } catch (Exception ex) {
                     }
@@ -123,7 +116,14 @@ public class ZeroMqMouse {
                     success = false;
                 }
                 if (success) {
-                    Object o = convertFromProtobuf(message);
+                    Object o = null;
+
+                    for(ProtoConverter converter : services) {
+                        if (converter.supportsConversion(message)) {
+                            o = converter.convertFromProtobuf(message);
+                            break;
+                        }
+                    }
                     if (o != null && TuioPoint.class.isAssignableFrom(o.getClass())) {
                         TuioPoint pt = (TuioPoint) o;
                         process(pt, md);
@@ -138,16 +138,20 @@ public class ZeroMqMouse {
                 HashMap val = mapper.readValue(msg, HashMap.class);
                 String c = (String) val.get("class");
                 TuioPoint pt = null;
-                if (c.equals("TUIO.TuioCursor")) {
-                    pt = mapper.readValue(msg, TUIO.TuioCursor.class);
-                } else if (c.equals("TUIO.TuioBlob")) {
-                    pt = mapper.readValue(msg, TUIO.TuioBlob.class);
-                } else if (c.equals("TUIO.TuioObject")) {
-                    pt = mapper.readValue(msg, TUIO.TuioObject.class);
+                switch (c) {
+                    case "TUIO.TuioCursor":
+                        pt = mapper.readValue(msg, TUIO.TuioCursor.class);
+                        break;
+                    case "TUIO.TuioBlob":
+                        pt = mapper.readValue(msg, TUIO.TuioBlob.class);
+                        break;
+                    case "TUIO.TuioObject":
+                        pt = mapper.readValue(msg, TUIO.TuioObject.class);
+                        break;
                 }
                 if (pt != null) {
                     process(pt, md);
-                    success = true;
+//                    success = true;
                 }
             }
         }
@@ -195,75 +199,4 @@ public class ZeroMqMouse {
             }
         }
     }
-
-    public static Object convertFromProtobuf(GeneratedMessage obj) {
-        Object target;
-
-        if (TUIO.TuioProtos.Blob.class.isAssignableFrom(obj.getClass())) {
-            target = new TUIO.TuioBlob();
-        } else if (TUIO.TuioProtos.Time.class.isAssignableFrom(obj.getClass())) {
-            target = new TUIO.TuioTime();
-        } else if (TUIO.TuioProtos.Cursor.class.isAssignableFrom(obj.getClass())) {
-            target = new TuioCursor();
-        } else if (TUIO.TuioProtos.Object.class.isAssignableFrom(obj.getClass())) {
-            target = new TuioObject();
-        } else {
-            return null;
-        }
-
-        try {
-            PropertyDescriptor[] targetProps = Introspector.getBeanInfo(target.getClass()).getPropertyDescriptors();
-
-            BeanInfo beanInfo = Introspector.getBeanInfo(obj.getClass());
-            PropertyDescriptor[] messageProps = beanInfo.getPropertyDescriptors();
-            Method[] methods = obj.getClass().getMethods();
-
-            for (PropertyDescriptor targetProp : targetProps) {
-                for (PropertyDescriptor messageProp : messageProps) {
-                    if (targetProp.getName().equals(messageProp.getName())) {
-                        Method writeMethod = targetProp.getWriteMethod();
-                        Method readMethod = null;
-                        for (Method m : methods) {
-                            if (writeMethod != null && m.getName().equals(writeMethod.getName().replaceFirst("set", "get"))) {
-                                readMethod = m;
-                                break;
-                            }
-                        }
-                        try {
-                            if (readMethod != null && targetProp.getReadMethod() != null) {
-//                                System.out.println("Prop2 Name!: " + messageProp.getName());
-                                boolean primitiveOrWrapper = ClassUtils.isPrimitiveOrWrapper(targetProp.getReadMethod().getReturnType());
-
-                                if (primitiveOrWrapper) {
-                                    writeMethod.invoke(target, messageProp.getReadMethod().invoke(obj));
-                                } else {
-                                    if (GeneratedMessage.class.isAssignableFrom(messageProp.getReadMethod().getReturnType())) {
-                                        GeneratedMessage invoke = (GeneratedMessage) messageProp.getReadMethod().invoke(obj);
-                                        Object val = convertFromProtobuf(invoke);
-                                        writeMethod.invoke(target, val);
-                                    }
-//                                    System.out.println("Prop1 Name!: " + targetProp.getName());
-                                }
-                            }
-                        } catch (NullPointerException ex) {
-                            //Logger.getLogger(ZeroMqMouse.class.getName()).log(Level.SEVERE, null, ex);
-                        } catch (IllegalArgumentException ex) {
-                            logger.error(ex);
-                        } catch (SecurityException ex) {
-                            logger.error(ex);
-                        } catch (IllegalAccessException ex) {
-                            logger.error(ex);
-                        } catch (InvocationTargetException ex) {
-                            logger.error(ex);
-                        }
-                        break;
-                    }
-                }
-            }
-        } catch (java.beans.IntrospectionException ex) {
-            logger.fatal(ex);
-        }
-        return target;
-    }
-
 }

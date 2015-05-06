@@ -35,7 +35,7 @@ public class MouseDriver implements TuioListener {
 
     private Robot robot = null;
 
-    private final ArrayList<MutableTriple<Long, Integer, Integer>> curs = new ArrayList<MutableTriple<Long, Integer, Integer>>();
+    private final ArrayList<MutableTriple<Long, Integer, Integer>> curs = new ArrayList<>();
 
     private static final Log logger = LogFactory.getLog(MouseDriver.class);
 
@@ -44,6 +44,7 @@ public class MouseDriver implements TuioListener {
      *
      * @param tobj
      */
+    @Override
     public void addTuioObject(TuioObject tobj) {
         logger.debug(MessageFormat.format("add tuio object symbol id: {0}", tobj.getSymbolID()));
     }
@@ -53,6 +54,7 @@ public class MouseDriver implements TuioListener {
      *
      * @param tobj
      */
+    @Override
     public void updateTuioObject(TuioObject tobj) {
         logger.debug(MessageFormat.format("update tuio object symbol id: {0}", tobj.getSymbolID()));
     }
@@ -62,6 +64,7 @@ public class MouseDriver implements TuioListener {
      *
      * @param tobj
      */
+    @Override
     public void removeTuioObject(TuioObject tobj) {
         logger.debug(MessageFormat.format("remove tuio object symbol id: {0}", tobj.getSymbolID()));
     }
@@ -71,6 +74,7 @@ public class MouseDriver implements TuioListener {
      *
      * @param bundleTime
      */
+    @Override
     public void refresh(TuioTime bundleTime) {
         logger.debug(MessageFormat.format("refresh frame id: {0}", bundleTime.getFrameID()));
     }
@@ -80,6 +84,7 @@ public class MouseDriver implements TuioListener {
      *
      * @param tcur
      */
+    @Override
     public void addTuioCursor(TuioCursor tcur) {
         logger.trace(MessageFormat.format("add tuio cursor id: {0}", tcur.getCursorID()));
 
@@ -94,7 +99,7 @@ public class MouseDriver implements TuioListener {
             }
         }
         if (!found) {
-            curs.add(new MutableTriple<Long, Integer, Integer>(tcur.getSessionID(), tcur.getScreenX(width), tcur.getScreenY(height)));
+            curs.add(new MutableTriple<>(tcur.getSessionID(), tcur.getScreenX(width), tcur.getScreenY(height)));
         }
 
         if (curs.size() == 1) {
@@ -116,6 +121,7 @@ public class MouseDriver implements TuioListener {
      *
      * @param tcur
      */
+    @Override
     public void updateTuioCursor(TuioCursor tcur) {
         logger.trace(MessageFormat.format("update tuio cursor id: {0}", tcur.getCursorID()));
 
@@ -140,6 +146,7 @@ public class MouseDriver implements TuioListener {
      *
      * @param tcur
      */
+    @Override
     public void removeTuioCursor(TuioCursor tcur) {
         logger.trace(MessageFormat.format("remove tuio cursor id: {0}", tcur.getCursorID()));
 
