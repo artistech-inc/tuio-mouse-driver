@@ -57,6 +57,8 @@ public class ZeroMqMouse {
 
         subscriber.subscribe("".getBytes());
         subscriber.connect("tcp://" + args[0]);
+        
+        System.out.println("Subscribed to " + args[0] + " for ZeroMQ messages.");
 
         // Get updates, expect random Ctrl-C death
         String msg = "";
