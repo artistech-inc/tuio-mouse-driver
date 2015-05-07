@@ -120,13 +120,14 @@ public final class TuioProtos {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return TuioProtos.internal_static_TUIO_Time_descriptor;
+      return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Time_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return TuioProtos.internal_static_TUIO_Time_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(TuioProtos.Time.class, TuioProtos.Time.Builder.class);
+      return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Time_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.artistech.protobuf.TuioProtos.Time.class, com.artistech.protobuf.TuioProtos.Time.Builder.class);
     }
 
     public static com.google.protobuf.Parser<Time> PARSER =
@@ -262,53 +263,53 @@ public final class TuioProtos {
       return super.writeReplace();
     }
 
-    public static TuioProtos.Time parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Time parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static TuioProtos.Time parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Time parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static TuioProtos.Time parseFrom(byte[] data)
+    public static com.artistech.protobuf.TuioProtos.Time parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static TuioProtos.Time parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Time parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static TuioProtos.Time parseFrom(java.io.InputStream input)
+    public static com.artistech.protobuf.TuioProtos.Time parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static TuioProtos.Time parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Time parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static TuioProtos.Time parseDelimitedFrom(java.io.InputStream input)
+    public static com.artistech.protobuf.TuioProtos.Time parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static TuioProtos.Time parseDelimitedFrom(
+    public static com.artistech.protobuf.TuioProtos.Time parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static TuioProtos.Time parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Time parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static TuioProtos.Time parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Time parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -317,7 +318,7 @@ public final class TuioProtos {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(TuioProtos.Time prototype) {
+    public static Builder newBuilder(com.artistech.protobuf.TuioProtos.Time prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -334,19 +335,20 @@ public final class TuioProtos {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:TUIO.Time)
-        TuioProtos.TimeOrBuilder {
+        com.artistech.protobuf.TuioProtos.TimeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return TuioProtos.internal_static_TUIO_Time_descriptor;
+        return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Time_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return TuioProtos.internal_static_TUIO_Time_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(TuioProtos.Time.class, TuioProtos.Time.Builder.class);
+        return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Time_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.artistech.protobuf.TuioProtos.Time.class, com.artistech.protobuf.TuioProtos.Time.Builder.class);
       }
 
-      // Construct using TUIO.TuioProtos.Time.newBuilder()
+      // Construct using com.artistech.protobuf.TuioProtos.Time.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -381,23 +383,23 @@ public final class TuioProtos {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return TuioProtos.internal_static_TUIO_Time_descriptor;
+        return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Time_descriptor;
       }
 
-      public TuioProtos.Time getDefaultInstanceForType() {
-        return TuioProtos.Time.getDefaultInstance();
+      public com.artistech.protobuf.TuioProtos.Time getDefaultInstanceForType() {
+        return com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
       }
 
-      public TuioProtos.Time build() {
-        TuioProtos.Time result = buildPartial();
+      public com.artistech.protobuf.TuioProtos.Time build() {
+        com.artistech.protobuf.TuioProtos.Time result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public TuioProtos.Time buildPartial() {
-        TuioProtos.Time result = new TuioProtos.Time(this);
+      public com.artistech.protobuf.TuioProtos.Time buildPartial() {
+        com.artistech.protobuf.TuioProtos.Time result = new com.artistech.protobuf.TuioProtos.Time(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -418,16 +420,16 @@ public final class TuioProtos {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof TuioProtos.Time) {
-          return mergeFrom((TuioProtos.Time)other);
+        if (other instanceof com.artistech.protobuf.TuioProtos.Time) {
+          return mergeFrom((com.artistech.protobuf.TuioProtos.Time)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(TuioProtos.Time other) {
-        if (other == TuioProtos.Time.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.artistech.protobuf.TuioProtos.Time other) {
+        if (other == com.artistech.protobuf.TuioProtos.Time.getDefaultInstance()) return this;
         if (other.hasSeconds()) {
           setSeconds(other.getSeconds());
         }
@@ -461,11 +463,11 @@ public final class TuioProtos {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        TuioProtos.Time parsedMessage = null;
+        com.artistech.protobuf.TuioProtos.Time parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (TuioProtos.Time) e.getUnfinishedMessage();
+          parsedMessage = (com.artistech.protobuf.TuioProtos.Time) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -612,11 +614,11 @@ public final class TuioProtos {
     /**
      * <code>optional .TUIO.Time tuioTime = 3;</code>
      */
-    TuioProtos.Time getTuioTime();
+    com.artistech.protobuf.TuioProtos.Time getTuioTime();
     /**
      * <code>optional .TUIO.Time tuioTime = 3;</code>
      */
-    TuioProtos.TimeOrBuilder getTuioTimeOrBuilder();
+    com.artistech.protobuf.TuioProtos.TimeOrBuilder getTuioTimeOrBuilder();
 
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
@@ -625,11 +627,11 @@ public final class TuioProtos {
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
      */
-    TuioProtos.Time getStartTime();
+    com.artistech.protobuf.TuioProtos.Time getStartTime();
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
      */
-    TuioProtos.TimeOrBuilder getStartTimeOrBuilder();
+    com.artistech.protobuf.TuioProtos.TimeOrBuilder getStartTimeOrBuilder();
 
     /**
      * <code>required int64 sessionID = 5;</code>
@@ -679,12 +681,12 @@ public final class TuioProtos {
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    java.util.List<TuioProtos.Point> 
+    java.util.List<com.artistech.protobuf.TuioProtos.Point> 
         getPathList();
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    TuioProtos.Point getPath(int index);
+    com.artistech.protobuf.TuioProtos.Point getPath(int index);
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
@@ -692,12 +694,12 @@ public final class TuioProtos {
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    java.util.List<? extends TuioProtos.PointOrBuilder> 
+    java.util.List<? extends com.artistech.protobuf.TuioProtos.PointOrBuilder> 
         getPathOrBuilderList();
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    TuioProtos.PointOrBuilder getPathOrBuilder(
+    com.artistech.protobuf.TuioProtos.PointOrBuilder getPathOrBuilder(
         int index);
 
     /**
@@ -781,11 +783,11 @@ public final class TuioProtos {
               break;
             }
             case 26: {
-              TuioProtos.Time.Builder subBuilder = null;
+              com.artistech.protobuf.TuioProtos.Time.Builder subBuilder = null;
               if (((bitField0_ & 0x00000004) == 0x00000004)) {
                 subBuilder = tuioTime_.toBuilder();
               }
-              tuioTime_ = input.readMessage(TuioProtos.Time.PARSER, extensionRegistry);
+              tuioTime_ = input.readMessage(com.artistech.protobuf.TuioProtos.Time.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(tuioTime_);
                 tuioTime_ = subBuilder.buildPartial();
@@ -794,11 +796,11 @@ public final class TuioProtos {
               break;
             }
             case 34: {
-              TuioProtos.Time.Builder subBuilder = null;
+              com.artistech.protobuf.TuioProtos.Time.Builder subBuilder = null;
               if (((bitField0_ & 0x00000008) == 0x00000008)) {
                 subBuilder = startTime_.toBuilder();
               }
-              startTime_ = input.readMessage(TuioProtos.Time.PARSER, extensionRegistry);
+              startTime_ = input.readMessage(com.artistech.protobuf.TuioProtos.Time.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(startTime_);
                 startTime_ = subBuilder.buildPartial();
@@ -833,10 +835,10 @@ public final class TuioProtos {
             }
             case 82: {
               if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
-                path_ = new java.util.ArrayList<TuioProtos.Point>();
+                path_ = new java.util.ArrayList<com.artistech.protobuf.TuioProtos.Point>();
                 mutable_bitField0_ |= 0x00000200;
               }
-              path_.add(input.readMessage(TuioProtos.Point.PARSER, extensionRegistry));
+              path_.add(input.readMessage(com.artistech.protobuf.TuioProtos.Point.PARSER, extensionRegistry));
               break;
             }
             case 88: {
@@ -866,13 +868,14 @@ public final class TuioProtos {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return TuioProtos.internal_static_TUIO_Cursor_descriptor;
+      return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Cursor_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return TuioProtos.internal_static_TUIO_Cursor_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(TuioProtos.Cursor.class, TuioProtos.Cursor.Builder.class);
+      return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Cursor_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.artistech.protobuf.TuioProtos.Cursor.class, com.artistech.protobuf.TuioProtos.Cursor.Builder.class);
     }
 
     public static com.google.protobuf.Parser<Cursor> PARSER =
@@ -922,7 +925,7 @@ public final class TuioProtos {
     }
 
     public static final int TUIOTIME_FIELD_NUMBER = 3;
-    private TuioProtos.Time tuioTime_;
+    private com.artistech.protobuf.TuioProtos.Time tuioTime_;
     /**
      * <code>optional .TUIO.Time tuioTime = 3;</code>
      */
@@ -932,18 +935,18 @@ public final class TuioProtos {
     /**
      * <code>optional .TUIO.Time tuioTime = 3;</code>
      */
-    public TuioProtos.Time getTuioTime() {
+    public com.artistech.protobuf.TuioProtos.Time getTuioTime() {
       return tuioTime_;
     }
     /**
      * <code>optional .TUIO.Time tuioTime = 3;</code>
      */
-    public TuioProtos.TimeOrBuilder getTuioTimeOrBuilder() {
+    public com.artistech.protobuf.TuioProtos.TimeOrBuilder getTuioTimeOrBuilder() {
       return tuioTime_;
     }
 
     public static final int STARTTIME_FIELD_NUMBER = 4;
-    private TuioProtos.Time startTime_;
+    private com.artistech.protobuf.TuioProtos.Time startTime_;
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
      */
@@ -953,13 +956,13 @@ public final class TuioProtos {
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
      */
-    public TuioProtos.Time getStartTime() {
+    public com.artistech.protobuf.TuioProtos.Time getStartTime() {
       return startTime_;
     }
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
      */
-    public TuioProtos.TimeOrBuilder getStartTimeOrBuilder() {
+    public com.artistech.protobuf.TuioProtos.TimeOrBuilder getStartTimeOrBuilder() {
       return startTime_;
     }
 
@@ -1039,17 +1042,17 @@ public final class TuioProtos {
     }
 
     public static final int PATH_FIELD_NUMBER = 10;
-    private java.util.List<TuioProtos.Point> path_;
+    private java.util.List<com.artistech.protobuf.TuioProtos.Point> path_;
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    public java.util.List<TuioProtos.Point> getPathList() {
+    public java.util.List<com.artistech.protobuf.TuioProtos.Point> getPathList() {
       return path_;
     }
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    public java.util.List<? extends TuioProtos.PointOrBuilder> 
+    public java.util.List<? extends com.artistech.protobuf.TuioProtos.PointOrBuilder> 
         getPathOrBuilderList() {
       return path_;
     }
@@ -1062,13 +1065,13 @@ public final class TuioProtos {
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    public TuioProtos.Point getPath(int index) {
+    public com.artistech.protobuf.TuioProtos.Point getPath(int index) {
       return path_.get(index);
     }
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    public TuioProtos.PointOrBuilder getPathOrBuilder(
+    public com.artistech.protobuf.TuioProtos.PointOrBuilder getPathOrBuilder(
         int index) {
       return path_.get(index);
     }
@@ -1106,8 +1109,8 @@ public final class TuioProtos {
     private void initFields() {
       x_ = 0F;
       y_ = 0F;
-      tuioTime_ = TuioProtos.Time.getDefaultInstance();
-      startTime_ = TuioProtos.Time.getDefaultInstance();
+      tuioTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
+      startTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
       sessionID_ = 0L;
       xSpeed_ = 0F;
       ySpeed_ = 0F;
@@ -1273,53 +1276,53 @@ public final class TuioProtos {
       return super.writeReplace();
     }
 
-    public static TuioProtos.Cursor parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Cursor parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static TuioProtos.Cursor parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Cursor parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static TuioProtos.Cursor parseFrom(byte[] data)
+    public static com.artistech.protobuf.TuioProtos.Cursor parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static TuioProtos.Cursor parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Cursor parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static TuioProtos.Cursor parseFrom(java.io.InputStream input)
+    public static com.artistech.protobuf.TuioProtos.Cursor parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static TuioProtos.Cursor parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Cursor parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static TuioProtos.Cursor parseDelimitedFrom(java.io.InputStream input)
+    public static com.artistech.protobuf.TuioProtos.Cursor parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static TuioProtos.Cursor parseDelimitedFrom(
+    public static com.artistech.protobuf.TuioProtos.Cursor parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static TuioProtos.Cursor parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Cursor parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static TuioProtos.Cursor parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Cursor parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1328,7 +1331,7 @@ public final class TuioProtos {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(TuioProtos.Cursor prototype) {
+    public static Builder newBuilder(com.artistech.protobuf.TuioProtos.Cursor prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -1345,19 +1348,20 @@ public final class TuioProtos {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:TUIO.Cursor)
-        TuioProtos.CursorOrBuilder {
+        com.artistech.protobuf.TuioProtos.CursorOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return TuioProtos.internal_static_TUIO_Cursor_descriptor;
+        return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Cursor_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return TuioProtos.internal_static_TUIO_Cursor_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(TuioProtos.Cursor.class, TuioProtos.Cursor.Builder.class);
+        return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Cursor_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.artistech.protobuf.TuioProtos.Cursor.class, com.artistech.protobuf.TuioProtos.Cursor.Builder.class);
       }
 
-      // Construct using TUIO.TuioProtos.Cursor.newBuilder()
+      // Construct using com.artistech.protobuf.TuioProtos.Cursor.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1385,13 +1389,13 @@ public final class TuioProtos {
         y_ = 0F;
         bitField0_ = (bitField0_ & ~0x00000002);
         if (tuioTimeBuilder_ == null) {
-          tuioTime_ = TuioProtos.Time.getDefaultInstance();
+          tuioTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
         } else {
           tuioTimeBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000004);
         if (startTimeBuilder_ == null) {
-          startTime_ = TuioProtos.Time.getDefaultInstance();
+          startTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
         } else {
           startTimeBuilder_.clear();
         }
@@ -1425,23 +1429,23 @@ public final class TuioProtos {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return TuioProtos.internal_static_TUIO_Cursor_descriptor;
+        return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Cursor_descriptor;
       }
 
-      public TuioProtos.Cursor getDefaultInstanceForType() {
-        return TuioProtos.Cursor.getDefaultInstance();
+      public com.artistech.protobuf.TuioProtos.Cursor getDefaultInstanceForType() {
+        return com.artistech.protobuf.TuioProtos.Cursor.getDefaultInstance();
       }
 
-      public TuioProtos.Cursor build() {
-        TuioProtos.Cursor result = buildPartial();
+      public com.artistech.protobuf.TuioProtos.Cursor build() {
+        com.artistech.protobuf.TuioProtos.Cursor result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public TuioProtos.Cursor buildPartial() {
-        TuioProtos.Cursor result = new TuioProtos.Cursor(this);
+      public com.artistech.protobuf.TuioProtos.Cursor buildPartial() {
+        com.artistech.protobuf.TuioProtos.Cursor result = new com.artistech.protobuf.TuioProtos.Cursor(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1511,16 +1515,16 @@ public final class TuioProtos {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof TuioProtos.Cursor) {
-          return mergeFrom((TuioProtos.Cursor)other);
+        if (other instanceof com.artistech.protobuf.TuioProtos.Cursor) {
+          return mergeFrom((com.artistech.protobuf.TuioProtos.Cursor)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(TuioProtos.Cursor other) {
-        if (other == TuioProtos.Cursor.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.artistech.protobuf.TuioProtos.Cursor other) {
+        if (other == com.artistech.protobuf.TuioProtos.Cursor.getDefaultInstance()) return this;
         if (other.hasX()) {
           setX(other.getX());
         }
@@ -1630,11 +1634,11 @@ public final class TuioProtos {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        TuioProtos.Cursor parsedMessage = null;
+        com.artistech.protobuf.TuioProtos.Cursor parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (TuioProtos.Cursor) e.getUnfinishedMessage();
+          parsedMessage = (com.artistech.protobuf.TuioProtos.Cursor) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -1709,9 +1713,9 @@ public final class TuioProtos {
         return this;
       }
 
-      private TuioProtos.Time tuioTime_ = TuioProtos.Time.getDefaultInstance();
+      private com.artistech.protobuf.TuioProtos.Time tuioTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder> tuioTimeBuilder_;
+          com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder> tuioTimeBuilder_;
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
@@ -1721,7 +1725,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
-      public TuioProtos.Time getTuioTime() {
+      public com.artistech.protobuf.TuioProtos.Time getTuioTime() {
         if (tuioTimeBuilder_ == null) {
           return tuioTime_;
         } else {
@@ -1731,7 +1735,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
-      public Builder setTuioTime(TuioProtos.Time value) {
+      public Builder setTuioTime(com.artistech.protobuf.TuioProtos.Time value) {
         if (tuioTimeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1748,7 +1752,7 @@ public final class TuioProtos {
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
       public Builder setTuioTime(
-          TuioProtos.Time.Builder builderForValue) {
+          com.artistech.protobuf.TuioProtos.Time.Builder builderForValue) {
         if (tuioTimeBuilder_ == null) {
           tuioTime_ = builderForValue.build();
           onChanged();
@@ -1761,12 +1765,12 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
-      public Builder mergeTuioTime(TuioProtos.Time value) {
+      public Builder mergeTuioTime(com.artistech.protobuf.TuioProtos.Time value) {
         if (tuioTimeBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004) &&
-              tuioTime_ != TuioProtos.Time.getDefaultInstance()) {
+              tuioTime_ != com.artistech.protobuf.TuioProtos.Time.getDefaultInstance()) {
             tuioTime_ =
-              TuioProtos.Time.newBuilder(tuioTime_).mergeFrom(value).buildPartial();
+              com.artistech.protobuf.TuioProtos.Time.newBuilder(tuioTime_).mergeFrom(value).buildPartial();
           } else {
             tuioTime_ = value;
           }
@@ -1782,7 +1786,7 @@ public final class TuioProtos {
        */
       public Builder clearTuioTime() {
         if (tuioTimeBuilder_ == null) {
-          tuioTime_ = TuioProtos.Time.getDefaultInstance();
+          tuioTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
           onChanged();
         } else {
           tuioTimeBuilder_.clear();
@@ -1793,7 +1797,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
-      public TuioProtos.Time.Builder getTuioTimeBuilder() {
+      public com.artistech.protobuf.TuioProtos.Time.Builder getTuioTimeBuilder() {
         bitField0_ |= 0x00000004;
         onChanged();
         return getTuioTimeFieldBuilder().getBuilder();
@@ -1801,7 +1805,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
-      public TuioProtos.TimeOrBuilder getTuioTimeOrBuilder() {
+      public com.artistech.protobuf.TuioProtos.TimeOrBuilder getTuioTimeOrBuilder() {
         if (tuioTimeBuilder_ != null) {
           return tuioTimeBuilder_.getMessageOrBuilder();
         } else {
@@ -1812,11 +1816,11 @@ public final class TuioProtos {
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder> 
+          com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder> 
           getTuioTimeFieldBuilder() {
         if (tuioTimeBuilder_ == null) {
           tuioTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder>(
+              com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder>(
                   getTuioTime(),
                   getParentForChildren(),
                   isClean());
@@ -1825,9 +1829,9 @@ public final class TuioProtos {
         return tuioTimeBuilder_;
       }
 
-      private TuioProtos.Time startTime_ = TuioProtos.Time.getDefaultInstance();
+      private com.artistech.protobuf.TuioProtos.Time startTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder> startTimeBuilder_;
+          com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder> startTimeBuilder_;
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
@@ -1837,7 +1841,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
-      public TuioProtos.Time getStartTime() {
+      public com.artistech.protobuf.TuioProtos.Time getStartTime() {
         if (startTimeBuilder_ == null) {
           return startTime_;
         } else {
@@ -1847,7 +1851,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
-      public Builder setStartTime(TuioProtos.Time value) {
+      public Builder setStartTime(com.artistech.protobuf.TuioProtos.Time value) {
         if (startTimeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1864,7 +1868,7 @@ public final class TuioProtos {
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
       public Builder setStartTime(
-          TuioProtos.Time.Builder builderForValue) {
+          com.artistech.protobuf.TuioProtos.Time.Builder builderForValue) {
         if (startTimeBuilder_ == null) {
           startTime_ = builderForValue.build();
           onChanged();
@@ -1877,12 +1881,12 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
-      public Builder mergeStartTime(TuioProtos.Time value) {
+      public Builder mergeStartTime(com.artistech.protobuf.TuioProtos.Time value) {
         if (startTimeBuilder_ == null) {
           if (((bitField0_ & 0x00000008) == 0x00000008) &&
-              startTime_ != TuioProtos.Time.getDefaultInstance()) {
+              startTime_ != com.artistech.protobuf.TuioProtos.Time.getDefaultInstance()) {
             startTime_ =
-              TuioProtos.Time.newBuilder(startTime_).mergeFrom(value).buildPartial();
+              com.artistech.protobuf.TuioProtos.Time.newBuilder(startTime_).mergeFrom(value).buildPartial();
           } else {
             startTime_ = value;
           }
@@ -1898,7 +1902,7 @@ public final class TuioProtos {
        */
       public Builder clearStartTime() {
         if (startTimeBuilder_ == null) {
-          startTime_ = TuioProtos.Time.getDefaultInstance();
+          startTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
           onChanged();
         } else {
           startTimeBuilder_.clear();
@@ -1909,7 +1913,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
-      public TuioProtos.Time.Builder getStartTimeBuilder() {
+      public com.artistech.protobuf.TuioProtos.Time.Builder getStartTimeBuilder() {
         bitField0_ |= 0x00000008;
         onChanged();
         return getStartTimeFieldBuilder().getBuilder();
@@ -1917,7 +1921,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
-      public TuioProtos.TimeOrBuilder getStartTimeOrBuilder() {
+      public com.artistech.protobuf.TuioProtos.TimeOrBuilder getStartTimeOrBuilder() {
         if (startTimeBuilder_ != null) {
           return startTimeBuilder_.getMessageOrBuilder();
         } else {
@@ -1928,11 +1932,11 @@ public final class TuioProtos {
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder> 
+          com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder> 
           getStartTimeFieldBuilder() {
         if (startTimeBuilder_ == null) {
           startTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder>(
+              com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder>(
                   getStartTime(),
                   getParentForChildren(),
                   isClean());
@@ -2101,22 +2105,22 @@ public final class TuioProtos {
         return this;
       }
 
-      private java.util.List<TuioProtos.Point> path_ =
+      private java.util.List<com.artistech.protobuf.TuioProtos.Point> path_ =
         java.util.Collections.emptyList();
       private void ensurePathIsMutable() {
         if (!((bitField0_ & 0x00000200) == 0x00000200)) {
-          path_ = new java.util.ArrayList<TuioProtos.Point>(path_);
+          path_ = new java.util.ArrayList<com.artistech.protobuf.TuioProtos.Point>(path_);
           bitField0_ |= 0x00000200;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          TuioProtos.Point, TuioProtos.Point.Builder, TuioProtos.PointOrBuilder> pathBuilder_;
+          com.artistech.protobuf.TuioProtos.Point, com.artistech.protobuf.TuioProtos.Point.Builder, com.artistech.protobuf.TuioProtos.PointOrBuilder> pathBuilder_;
 
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public java.util.List<TuioProtos.Point> getPathList() {
+      public java.util.List<com.artistech.protobuf.TuioProtos.Point> getPathList() {
         if (pathBuilder_ == null) {
           return java.util.Collections.unmodifiableList(path_);
         } else {
@@ -2136,7 +2140,7 @@ public final class TuioProtos {
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public TuioProtos.Point getPath(int index) {
+      public com.artistech.protobuf.TuioProtos.Point getPath(int index) {
         if (pathBuilder_ == null) {
           return path_.get(index);
         } else {
@@ -2147,7 +2151,7 @@ public final class TuioProtos {
        * <code>repeated .TUIO.Point path = 10;</code>
        */
       public Builder setPath(
-          int index, TuioProtos.Point value) {
+          int index, com.artistech.protobuf.TuioProtos.Point value) {
         if (pathBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2164,7 +2168,7 @@ public final class TuioProtos {
        * <code>repeated .TUIO.Point path = 10;</code>
        */
       public Builder setPath(
-          int index, TuioProtos.Point.Builder builderForValue) {
+          int index, com.artistech.protobuf.TuioProtos.Point.Builder builderForValue) {
         if (pathBuilder_ == null) {
           ensurePathIsMutable();
           path_.set(index, builderForValue.build());
@@ -2177,7 +2181,7 @@ public final class TuioProtos {
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public Builder addPath(TuioProtos.Point value) {
+      public Builder addPath(com.artistech.protobuf.TuioProtos.Point value) {
         if (pathBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2194,7 +2198,7 @@ public final class TuioProtos {
        * <code>repeated .TUIO.Point path = 10;</code>
        */
       public Builder addPath(
-          int index, TuioProtos.Point value) {
+          int index, com.artistech.protobuf.TuioProtos.Point value) {
         if (pathBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2211,7 +2215,7 @@ public final class TuioProtos {
        * <code>repeated .TUIO.Point path = 10;</code>
        */
       public Builder addPath(
-          TuioProtos.Point.Builder builderForValue) {
+          com.artistech.protobuf.TuioProtos.Point.Builder builderForValue) {
         if (pathBuilder_ == null) {
           ensurePathIsMutable();
           path_.add(builderForValue.build());
@@ -2225,7 +2229,7 @@ public final class TuioProtos {
        * <code>repeated .TUIO.Point path = 10;</code>
        */
       public Builder addPath(
-          int index, TuioProtos.Point.Builder builderForValue) {
+          int index, com.artistech.protobuf.TuioProtos.Point.Builder builderForValue) {
         if (pathBuilder_ == null) {
           ensurePathIsMutable();
           path_.add(index, builderForValue.build());
@@ -2239,7 +2243,7 @@ public final class TuioProtos {
        * <code>repeated .TUIO.Point path = 10;</code>
        */
       public Builder addAllPath(
-          java.lang.Iterable<? extends TuioProtos.Point> values) {
+          java.lang.Iterable<? extends com.artistech.protobuf.TuioProtos.Point> values) {
         if (pathBuilder_ == null) {
           ensurePathIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2279,14 +2283,14 @@ public final class TuioProtos {
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public TuioProtos.Point.Builder getPathBuilder(
+      public com.artistech.protobuf.TuioProtos.Point.Builder getPathBuilder(
           int index) {
         return getPathFieldBuilder().getBuilder(index);
       }
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public TuioProtos.PointOrBuilder getPathOrBuilder(
+      public com.artistech.protobuf.TuioProtos.PointOrBuilder getPathOrBuilder(
           int index) {
         if (pathBuilder_ == null) {
           return path_.get(index);  } else {
@@ -2296,7 +2300,7 @@ public final class TuioProtos {
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public java.util.List<? extends TuioProtos.PointOrBuilder> 
+      public java.util.List<? extends com.artistech.protobuf.TuioProtos.PointOrBuilder> 
            getPathOrBuilderList() {
         if (pathBuilder_ != null) {
           return pathBuilder_.getMessageOrBuilderList();
@@ -2307,29 +2311,31 @@ public final class TuioProtos {
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public TuioProtos.Point.Builder addPathBuilder() {
-        return getPathFieldBuilder().addBuilder(TuioProtos.Point.getDefaultInstance());
+      public com.artistech.protobuf.TuioProtos.Point.Builder addPathBuilder() {
+        return getPathFieldBuilder().addBuilder(
+            com.artistech.protobuf.TuioProtos.Point.getDefaultInstance());
       }
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public TuioProtos.Point.Builder addPathBuilder(
+      public com.artistech.protobuf.TuioProtos.Point.Builder addPathBuilder(
           int index) {
-        return getPathFieldBuilder().addBuilder(index, TuioProtos.Point.getDefaultInstance());
+        return getPathFieldBuilder().addBuilder(
+            index, com.artistech.protobuf.TuioProtos.Point.getDefaultInstance());
       }
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public java.util.List<TuioProtos.Point.Builder> 
+      public java.util.List<com.artistech.protobuf.TuioProtos.Point.Builder> 
            getPathBuilderList() {
         return getPathFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          TuioProtos.Point, TuioProtos.Point.Builder, TuioProtos.PointOrBuilder> 
+          com.artistech.protobuf.TuioProtos.Point, com.artistech.protobuf.TuioProtos.Point.Builder, com.artistech.protobuf.TuioProtos.PointOrBuilder> 
           getPathFieldBuilder() {
         if (pathBuilder_ == null) {
           pathBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              TuioProtos.Point, TuioProtos.Point.Builder, TuioProtos.PointOrBuilder>(
+              com.artistech.protobuf.TuioProtos.Point, com.artistech.protobuf.TuioProtos.Point.Builder, com.artistech.protobuf.TuioProtos.PointOrBuilder>(
                   path_,
                   ((bitField0_ & 0x00000200) == 0x00000200),
                   getParentForChildren(),
@@ -2443,11 +2449,11 @@ public final class TuioProtos {
     /**
      * <code>optional .TUIO.Time tuioTime = 3;</code>
      */
-    TuioProtos.Time getTuioTime();
+    com.artistech.protobuf.TuioProtos.Time getTuioTime();
     /**
      * <code>optional .TUIO.Time tuioTime = 3;</code>
      */
-    TuioProtos.TimeOrBuilder getTuioTimeOrBuilder();
+    com.artistech.protobuf.TuioProtos.TimeOrBuilder getTuioTimeOrBuilder();
 
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
@@ -2456,11 +2462,11 @@ public final class TuioProtos {
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
      */
-    TuioProtos.Time getStartTime();
+    com.artistech.protobuf.TuioProtos.Time getStartTime();
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
      */
-    TuioProtos.TimeOrBuilder getStartTimeOrBuilder();
+    com.artistech.protobuf.TuioProtos.TimeOrBuilder getStartTimeOrBuilder();
 
     /**
      * <code>required int64 sessionID = 5;</code>
@@ -2510,12 +2516,12 @@ public final class TuioProtos {
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    java.util.List<TuioProtos.Point> 
+    java.util.List<com.artistech.protobuf.TuioProtos.Point> 
         getPathList();
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    TuioProtos.Point getPath(int index);
+    com.artistech.protobuf.TuioProtos.Point getPath(int index);
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
@@ -2523,12 +2529,12 @@ public final class TuioProtos {
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    java.util.List<? extends TuioProtos.PointOrBuilder> 
+    java.util.List<? extends com.artistech.protobuf.TuioProtos.PointOrBuilder> 
         getPathOrBuilderList();
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    TuioProtos.PointOrBuilder getPathOrBuilder(
+    com.artistech.protobuf.TuioProtos.PointOrBuilder getPathOrBuilder(
         int index);
 
     /**
@@ -2666,11 +2672,11 @@ public final class TuioProtos {
               break;
             }
             case 26: {
-              TuioProtos.Time.Builder subBuilder = null;
+              com.artistech.protobuf.TuioProtos.Time.Builder subBuilder = null;
               if (((bitField0_ & 0x00000004) == 0x00000004)) {
                 subBuilder = tuioTime_.toBuilder();
               }
-              tuioTime_ = input.readMessage(TuioProtos.Time.PARSER, extensionRegistry);
+              tuioTime_ = input.readMessage(com.artistech.protobuf.TuioProtos.Time.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(tuioTime_);
                 tuioTime_ = subBuilder.buildPartial();
@@ -2679,11 +2685,11 @@ public final class TuioProtos {
               break;
             }
             case 34: {
-              TuioProtos.Time.Builder subBuilder = null;
+              com.artistech.protobuf.TuioProtos.Time.Builder subBuilder = null;
               if (((bitField0_ & 0x00000008) == 0x00000008)) {
                 subBuilder = startTime_.toBuilder();
               }
-              startTime_ = input.readMessage(TuioProtos.Time.PARSER, extensionRegistry);
+              startTime_ = input.readMessage(com.artistech.protobuf.TuioProtos.Time.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(startTime_);
                 startTime_ = subBuilder.buildPartial();
@@ -2718,10 +2724,10 @@ public final class TuioProtos {
             }
             case 82: {
               if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
-                path_ = new java.util.ArrayList<TuioProtos.Point>();
+                path_ = new java.util.ArrayList<com.artistech.protobuf.TuioProtos.Point>();
                 mutable_bitField0_ |= 0x00000200;
               }
-              path_.add(input.readMessage(TuioProtos.Point.PARSER, extensionRegistry));
+              path_.add(input.readMessage(com.artistech.protobuf.TuioProtos.Point.PARSER, extensionRegistry));
               break;
             }
             case 88: {
@@ -2781,13 +2787,14 @@ public final class TuioProtos {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return TuioProtos.internal_static_TUIO_Blob_descriptor;
+      return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Blob_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return TuioProtos.internal_static_TUIO_Blob_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(TuioProtos.Blob.class, TuioProtos.Blob.Builder.class);
+      return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Blob_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.artistech.protobuf.TuioProtos.Blob.class, com.artistech.protobuf.TuioProtos.Blob.Builder.class);
     }
 
     public static com.google.protobuf.Parser<Blob> PARSER =
@@ -2837,7 +2844,7 @@ public final class TuioProtos {
     }
 
     public static final int TUIOTIME_FIELD_NUMBER = 3;
-    private TuioProtos.Time tuioTime_;
+    private com.artistech.protobuf.TuioProtos.Time tuioTime_;
     /**
      * <code>optional .TUIO.Time tuioTime = 3;</code>
      */
@@ -2847,18 +2854,18 @@ public final class TuioProtos {
     /**
      * <code>optional .TUIO.Time tuioTime = 3;</code>
      */
-    public TuioProtos.Time getTuioTime() {
+    public com.artistech.protobuf.TuioProtos.Time getTuioTime() {
       return tuioTime_;
     }
     /**
      * <code>optional .TUIO.Time tuioTime = 3;</code>
      */
-    public TuioProtos.TimeOrBuilder getTuioTimeOrBuilder() {
+    public com.artistech.protobuf.TuioProtos.TimeOrBuilder getTuioTimeOrBuilder() {
       return tuioTime_;
     }
 
     public static final int STARTTIME_FIELD_NUMBER = 4;
-    private TuioProtos.Time startTime_;
+    private com.artistech.protobuf.TuioProtos.Time startTime_;
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
      */
@@ -2868,13 +2875,13 @@ public final class TuioProtos {
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
      */
-    public TuioProtos.Time getStartTime() {
+    public com.artistech.protobuf.TuioProtos.Time getStartTime() {
       return startTime_;
     }
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
      */
-    public TuioProtos.TimeOrBuilder getStartTimeOrBuilder() {
+    public com.artistech.protobuf.TuioProtos.TimeOrBuilder getStartTimeOrBuilder() {
       return startTime_;
     }
 
@@ -2954,17 +2961,17 @@ public final class TuioProtos {
     }
 
     public static final int PATH_FIELD_NUMBER = 10;
-    private java.util.List<TuioProtos.Point> path_;
+    private java.util.List<com.artistech.protobuf.TuioProtos.Point> path_;
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    public java.util.List<TuioProtos.Point> getPathList() {
+    public java.util.List<com.artistech.protobuf.TuioProtos.Point> getPathList() {
       return path_;
     }
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    public java.util.List<? extends TuioProtos.PointOrBuilder> 
+    public java.util.List<? extends com.artistech.protobuf.TuioProtos.PointOrBuilder> 
         getPathOrBuilderList() {
       return path_;
     }
@@ -2977,13 +2984,13 @@ public final class TuioProtos {
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    public TuioProtos.Point getPath(int index) {
+    public com.artistech.protobuf.TuioProtos.Point getPath(int index) {
       return path_.get(index);
     }
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    public TuioProtos.PointOrBuilder getPathOrBuilder(
+    public com.artistech.protobuf.TuioProtos.PointOrBuilder getPathOrBuilder(
         int index) {
       return path_.get(index);
     }
@@ -3111,8 +3118,8 @@ public final class TuioProtos {
     private void initFields() {
       x_ = 0F;
       y_ = 0F;
-      tuioTime_ = TuioProtos.Time.getDefaultInstance();
-      startTime_ = TuioProtos.Time.getDefaultInstance();
+      tuioTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
+      startTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
       sessionID_ = 0L;
       xSpeed_ = 0F;
       ySpeed_ = 0F;
@@ -3350,53 +3357,53 @@ public final class TuioProtos {
       return super.writeReplace();
     }
 
-    public static TuioProtos.Blob parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Blob parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static TuioProtos.Blob parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Blob parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static TuioProtos.Blob parseFrom(byte[] data)
+    public static com.artistech.protobuf.TuioProtos.Blob parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static TuioProtos.Blob parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Blob parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static TuioProtos.Blob parseFrom(java.io.InputStream input)
+    public static com.artistech.protobuf.TuioProtos.Blob parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static TuioProtos.Blob parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Blob parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static TuioProtos.Blob parseDelimitedFrom(java.io.InputStream input)
+    public static com.artistech.protobuf.TuioProtos.Blob parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static TuioProtos.Blob parseDelimitedFrom(
+    public static com.artistech.protobuf.TuioProtos.Blob parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static TuioProtos.Blob parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Blob parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static TuioProtos.Blob parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Blob parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3405,7 +3412,7 @@ public final class TuioProtos {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(TuioProtos.Blob prototype) {
+    public static Builder newBuilder(com.artistech.protobuf.TuioProtos.Blob prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -3422,19 +3429,20 @@ public final class TuioProtos {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:TUIO.Blob)
-        TuioProtos.BlobOrBuilder {
+        com.artistech.protobuf.TuioProtos.BlobOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return TuioProtos.internal_static_TUIO_Blob_descriptor;
+        return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Blob_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return TuioProtos.internal_static_TUIO_Blob_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(TuioProtos.Blob.class, TuioProtos.Blob.Builder.class);
+        return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Blob_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.artistech.protobuf.TuioProtos.Blob.class, com.artistech.protobuf.TuioProtos.Blob.Builder.class);
       }
 
-      // Construct using TUIO.TuioProtos.Blob.newBuilder()
+      // Construct using com.artistech.protobuf.TuioProtos.Blob.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3462,13 +3470,13 @@ public final class TuioProtos {
         y_ = 0F;
         bitField0_ = (bitField0_ & ~0x00000002);
         if (tuioTimeBuilder_ == null) {
-          tuioTime_ = TuioProtos.Time.getDefaultInstance();
+          tuioTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
         } else {
           tuioTimeBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000004);
         if (startTimeBuilder_ == null) {
-          startTime_ = TuioProtos.Time.getDefaultInstance();
+          startTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
         } else {
           startTimeBuilder_.clear();
         }
@@ -3514,23 +3522,23 @@ public final class TuioProtos {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return TuioProtos.internal_static_TUIO_Blob_descriptor;
+        return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Blob_descriptor;
       }
 
-      public TuioProtos.Blob getDefaultInstanceForType() {
-        return TuioProtos.Blob.getDefaultInstance();
+      public com.artistech.protobuf.TuioProtos.Blob getDefaultInstanceForType() {
+        return com.artistech.protobuf.TuioProtos.Blob.getDefaultInstance();
       }
 
-      public TuioProtos.Blob build() {
-        TuioProtos.Blob result = buildPartial();
+      public com.artistech.protobuf.TuioProtos.Blob build() {
+        com.artistech.protobuf.TuioProtos.Blob result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public TuioProtos.Blob buildPartial() {
-        TuioProtos.Blob result = new TuioProtos.Blob(this);
+      public com.artistech.protobuf.TuioProtos.Blob buildPartial() {
+        com.artistech.protobuf.TuioProtos.Blob result = new com.artistech.protobuf.TuioProtos.Blob(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -3624,16 +3632,16 @@ public final class TuioProtos {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof TuioProtos.Blob) {
-          return mergeFrom((TuioProtos.Blob)other);
+        if (other instanceof com.artistech.protobuf.TuioProtos.Blob) {
+          return mergeFrom((com.artistech.protobuf.TuioProtos.Blob)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(TuioProtos.Blob other) {
-        if (other == TuioProtos.Blob.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.artistech.protobuf.TuioProtos.Blob other) {
+        if (other == com.artistech.protobuf.TuioProtos.Blob.getDefaultInstance()) return this;
         if (other.hasX()) {
           setX(other.getX());
         }
@@ -3785,11 +3793,11 @@ public final class TuioProtos {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        TuioProtos.Blob parsedMessage = null;
+        com.artistech.protobuf.TuioProtos.Blob parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (TuioProtos.Blob) e.getUnfinishedMessage();
+          parsedMessage = (com.artistech.protobuf.TuioProtos.Blob) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -3864,9 +3872,9 @@ public final class TuioProtos {
         return this;
       }
 
-      private TuioProtos.Time tuioTime_ = TuioProtos.Time.getDefaultInstance();
+      private com.artistech.protobuf.TuioProtos.Time tuioTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder> tuioTimeBuilder_;
+          com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder> tuioTimeBuilder_;
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
@@ -3876,7 +3884,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
-      public TuioProtos.Time getTuioTime() {
+      public com.artistech.protobuf.TuioProtos.Time getTuioTime() {
         if (tuioTimeBuilder_ == null) {
           return tuioTime_;
         } else {
@@ -3886,7 +3894,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
-      public Builder setTuioTime(TuioProtos.Time value) {
+      public Builder setTuioTime(com.artistech.protobuf.TuioProtos.Time value) {
         if (tuioTimeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3903,7 +3911,7 @@ public final class TuioProtos {
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
       public Builder setTuioTime(
-          TuioProtos.Time.Builder builderForValue) {
+          com.artistech.protobuf.TuioProtos.Time.Builder builderForValue) {
         if (tuioTimeBuilder_ == null) {
           tuioTime_ = builderForValue.build();
           onChanged();
@@ -3916,12 +3924,12 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
-      public Builder mergeTuioTime(TuioProtos.Time value) {
+      public Builder mergeTuioTime(com.artistech.protobuf.TuioProtos.Time value) {
         if (tuioTimeBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004) &&
-              tuioTime_ != TuioProtos.Time.getDefaultInstance()) {
+              tuioTime_ != com.artistech.protobuf.TuioProtos.Time.getDefaultInstance()) {
             tuioTime_ =
-              TuioProtos.Time.newBuilder(tuioTime_).mergeFrom(value).buildPartial();
+              com.artistech.protobuf.TuioProtos.Time.newBuilder(tuioTime_).mergeFrom(value).buildPartial();
           } else {
             tuioTime_ = value;
           }
@@ -3937,7 +3945,7 @@ public final class TuioProtos {
        */
       public Builder clearTuioTime() {
         if (tuioTimeBuilder_ == null) {
-          tuioTime_ = TuioProtos.Time.getDefaultInstance();
+          tuioTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
           onChanged();
         } else {
           tuioTimeBuilder_.clear();
@@ -3948,7 +3956,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
-      public TuioProtos.Time.Builder getTuioTimeBuilder() {
+      public com.artistech.protobuf.TuioProtos.Time.Builder getTuioTimeBuilder() {
         bitField0_ |= 0x00000004;
         onChanged();
         return getTuioTimeFieldBuilder().getBuilder();
@@ -3956,7 +3964,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
-      public TuioProtos.TimeOrBuilder getTuioTimeOrBuilder() {
+      public com.artistech.protobuf.TuioProtos.TimeOrBuilder getTuioTimeOrBuilder() {
         if (tuioTimeBuilder_ != null) {
           return tuioTimeBuilder_.getMessageOrBuilder();
         } else {
@@ -3967,11 +3975,11 @@ public final class TuioProtos {
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder> 
+          com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder> 
           getTuioTimeFieldBuilder() {
         if (tuioTimeBuilder_ == null) {
           tuioTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder>(
+              com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder>(
                   getTuioTime(),
                   getParentForChildren(),
                   isClean());
@@ -3980,9 +3988,9 @@ public final class TuioProtos {
         return tuioTimeBuilder_;
       }
 
-      private TuioProtos.Time startTime_ = TuioProtos.Time.getDefaultInstance();
+      private com.artistech.protobuf.TuioProtos.Time startTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder> startTimeBuilder_;
+          com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder> startTimeBuilder_;
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
@@ -3992,7 +4000,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
-      public TuioProtos.Time getStartTime() {
+      public com.artistech.protobuf.TuioProtos.Time getStartTime() {
         if (startTimeBuilder_ == null) {
           return startTime_;
         } else {
@@ -4002,7 +4010,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
-      public Builder setStartTime(TuioProtos.Time value) {
+      public Builder setStartTime(com.artistech.protobuf.TuioProtos.Time value) {
         if (startTimeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4019,7 +4027,7 @@ public final class TuioProtos {
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
       public Builder setStartTime(
-          TuioProtos.Time.Builder builderForValue) {
+          com.artistech.protobuf.TuioProtos.Time.Builder builderForValue) {
         if (startTimeBuilder_ == null) {
           startTime_ = builderForValue.build();
           onChanged();
@@ -4032,12 +4040,12 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
-      public Builder mergeStartTime(TuioProtos.Time value) {
+      public Builder mergeStartTime(com.artistech.protobuf.TuioProtos.Time value) {
         if (startTimeBuilder_ == null) {
           if (((bitField0_ & 0x00000008) == 0x00000008) &&
-              startTime_ != TuioProtos.Time.getDefaultInstance()) {
+              startTime_ != com.artistech.protobuf.TuioProtos.Time.getDefaultInstance()) {
             startTime_ =
-              TuioProtos.Time.newBuilder(startTime_).mergeFrom(value).buildPartial();
+              com.artistech.protobuf.TuioProtos.Time.newBuilder(startTime_).mergeFrom(value).buildPartial();
           } else {
             startTime_ = value;
           }
@@ -4053,7 +4061,7 @@ public final class TuioProtos {
        */
       public Builder clearStartTime() {
         if (startTimeBuilder_ == null) {
-          startTime_ = TuioProtos.Time.getDefaultInstance();
+          startTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
           onChanged();
         } else {
           startTimeBuilder_.clear();
@@ -4064,7 +4072,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
-      public TuioProtos.Time.Builder getStartTimeBuilder() {
+      public com.artistech.protobuf.TuioProtos.Time.Builder getStartTimeBuilder() {
         bitField0_ |= 0x00000008;
         onChanged();
         return getStartTimeFieldBuilder().getBuilder();
@@ -4072,7 +4080,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
-      public TuioProtos.TimeOrBuilder getStartTimeOrBuilder() {
+      public com.artistech.protobuf.TuioProtos.TimeOrBuilder getStartTimeOrBuilder() {
         if (startTimeBuilder_ != null) {
           return startTimeBuilder_.getMessageOrBuilder();
         } else {
@@ -4083,11 +4091,11 @@ public final class TuioProtos {
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder> 
+          com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder> 
           getStartTimeFieldBuilder() {
         if (startTimeBuilder_ == null) {
           startTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder>(
+              com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder>(
                   getStartTime(),
                   getParentForChildren(),
                   isClean());
@@ -4256,22 +4264,22 @@ public final class TuioProtos {
         return this;
       }
 
-      private java.util.List<TuioProtos.Point> path_ =
+      private java.util.List<com.artistech.protobuf.TuioProtos.Point> path_ =
         java.util.Collections.emptyList();
       private void ensurePathIsMutable() {
         if (!((bitField0_ & 0x00000200) == 0x00000200)) {
-          path_ = new java.util.ArrayList<TuioProtos.Point>(path_);
+          path_ = new java.util.ArrayList<com.artistech.protobuf.TuioProtos.Point>(path_);
           bitField0_ |= 0x00000200;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          TuioProtos.Point, TuioProtos.Point.Builder, TuioProtos.PointOrBuilder> pathBuilder_;
+          com.artistech.protobuf.TuioProtos.Point, com.artistech.protobuf.TuioProtos.Point.Builder, com.artistech.protobuf.TuioProtos.PointOrBuilder> pathBuilder_;
 
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public java.util.List<TuioProtos.Point> getPathList() {
+      public java.util.List<com.artistech.protobuf.TuioProtos.Point> getPathList() {
         if (pathBuilder_ == null) {
           return java.util.Collections.unmodifiableList(path_);
         } else {
@@ -4291,7 +4299,7 @@ public final class TuioProtos {
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public TuioProtos.Point getPath(int index) {
+      public com.artistech.protobuf.TuioProtos.Point getPath(int index) {
         if (pathBuilder_ == null) {
           return path_.get(index);
         } else {
@@ -4302,7 +4310,7 @@ public final class TuioProtos {
        * <code>repeated .TUIO.Point path = 10;</code>
        */
       public Builder setPath(
-          int index, TuioProtos.Point value) {
+          int index, com.artistech.protobuf.TuioProtos.Point value) {
         if (pathBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4319,7 +4327,7 @@ public final class TuioProtos {
        * <code>repeated .TUIO.Point path = 10;</code>
        */
       public Builder setPath(
-          int index, TuioProtos.Point.Builder builderForValue) {
+          int index, com.artistech.protobuf.TuioProtos.Point.Builder builderForValue) {
         if (pathBuilder_ == null) {
           ensurePathIsMutable();
           path_.set(index, builderForValue.build());
@@ -4332,7 +4340,7 @@ public final class TuioProtos {
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public Builder addPath(TuioProtos.Point value) {
+      public Builder addPath(com.artistech.protobuf.TuioProtos.Point value) {
         if (pathBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4349,7 +4357,7 @@ public final class TuioProtos {
        * <code>repeated .TUIO.Point path = 10;</code>
        */
       public Builder addPath(
-          int index, TuioProtos.Point value) {
+          int index, com.artistech.protobuf.TuioProtos.Point value) {
         if (pathBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4366,7 +4374,7 @@ public final class TuioProtos {
        * <code>repeated .TUIO.Point path = 10;</code>
        */
       public Builder addPath(
-          TuioProtos.Point.Builder builderForValue) {
+          com.artistech.protobuf.TuioProtos.Point.Builder builderForValue) {
         if (pathBuilder_ == null) {
           ensurePathIsMutable();
           path_.add(builderForValue.build());
@@ -4380,7 +4388,7 @@ public final class TuioProtos {
        * <code>repeated .TUIO.Point path = 10;</code>
        */
       public Builder addPath(
-          int index, TuioProtos.Point.Builder builderForValue) {
+          int index, com.artistech.protobuf.TuioProtos.Point.Builder builderForValue) {
         if (pathBuilder_ == null) {
           ensurePathIsMutable();
           path_.add(index, builderForValue.build());
@@ -4394,7 +4402,7 @@ public final class TuioProtos {
        * <code>repeated .TUIO.Point path = 10;</code>
        */
       public Builder addAllPath(
-          java.lang.Iterable<? extends TuioProtos.Point> values) {
+          java.lang.Iterable<? extends com.artistech.protobuf.TuioProtos.Point> values) {
         if (pathBuilder_ == null) {
           ensurePathIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -4434,14 +4442,14 @@ public final class TuioProtos {
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public TuioProtos.Point.Builder getPathBuilder(
+      public com.artistech.protobuf.TuioProtos.Point.Builder getPathBuilder(
           int index) {
         return getPathFieldBuilder().getBuilder(index);
       }
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public TuioProtos.PointOrBuilder getPathOrBuilder(
+      public com.artistech.protobuf.TuioProtos.PointOrBuilder getPathOrBuilder(
           int index) {
         if (pathBuilder_ == null) {
           return path_.get(index);  } else {
@@ -4451,7 +4459,7 @@ public final class TuioProtos {
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public java.util.List<? extends TuioProtos.PointOrBuilder> 
+      public java.util.List<? extends com.artistech.protobuf.TuioProtos.PointOrBuilder> 
            getPathOrBuilderList() {
         if (pathBuilder_ != null) {
           return pathBuilder_.getMessageOrBuilderList();
@@ -4462,29 +4470,31 @@ public final class TuioProtos {
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public TuioProtos.Point.Builder addPathBuilder() {
-        return getPathFieldBuilder().addBuilder(TuioProtos.Point.getDefaultInstance());
+      public com.artistech.protobuf.TuioProtos.Point.Builder addPathBuilder() {
+        return getPathFieldBuilder().addBuilder(
+            com.artistech.protobuf.TuioProtos.Point.getDefaultInstance());
       }
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public TuioProtos.Point.Builder addPathBuilder(
+      public com.artistech.protobuf.TuioProtos.Point.Builder addPathBuilder(
           int index) {
-        return getPathFieldBuilder().addBuilder(index, TuioProtos.Point.getDefaultInstance());
+        return getPathFieldBuilder().addBuilder(
+            index, com.artistech.protobuf.TuioProtos.Point.getDefaultInstance());
       }
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public java.util.List<TuioProtos.Point.Builder> 
+      public java.util.List<com.artistech.protobuf.TuioProtos.Point.Builder> 
            getPathBuilderList() {
         return getPathFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          TuioProtos.Point, TuioProtos.Point.Builder, TuioProtos.PointOrBuilder> 
+          com.artistech.protobuf.TuioProtos.Point, com.artistech.protobuf.TuioProtos.Point.Builder, com.artistech.protobuf.TuioProtos.PointOrBuilder> 
           getPathFieldBuilder() {
         if (pathBuilder_ == null) {
           pathBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              TuioProtos.Point, TuioProtos.Point.Builder, TuioProtos.PointOrBuilder>(
+              com.artistech.protobuf.TuioProtos.Point, com.artistech.protobuf.TuioProtos.Point.Builder, com.artistech.protobuf.TuioProtos.PointOrBuilder>(
                   path_,
                   ((bitField0_ & 0x00000200) == 0x00000200),
                   getParentForChildren(),
@@ -4790,11 +4800,11 @@ public final class TuioProtos {
     /**
      * <code>optional .TUIO.Time tuioTime = 3;</code>
      */
-    TuioProtos.Time getTuioTime();
+    com.artistech.protobuf.TuioProtos.Time getTuioTime();
     /**
      * <code>optional .TUIO.Time tuioTime = 3;</code>
      */
-    TuioProtos.TimeOrBuilder getTuioTimeOrBuilder();
+    com.artistech.protobuf.TuioProtos.TimeOrBuilder getTuioTimeOrBuilder();
 
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
@@ -4803,11 +4813,11 @@ public final class TuioProtos {
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
      */
-    TuioProtos.Time getStartTime();
+    com.artistech.protobuf.TuioProtos.Time getStartTime();
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
      */
-    TuioProtos.TimeOrBuilder getStartTimeOrBuilder();
+    com.artistech.protobuf.TuioProtos.TimeOrBuilder getStartTimeOrBuilder();
 
     /**
      * <code>required int64 sessionID = 5;</code>
@@ -4857,12 +4867,12 @@ public final class TuioProtos {
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    java.util.List<TuioProtos.Point> 
+    java.util.List<com.artistech.protobuf.TuioProtos.Point> 
         getPathList();
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    TuioProtos.Point getPath(int index);
+    com.artistech.protobuf.TuioProtos.Point getPath(int index);
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
@@ -4870,12 +4880,12 @@ public final class TuioProtos {
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    java.util.List<? extends TuioProtos.PointOrBuilder> 
+    java.util.List<? extends com.artistech.protobuf.TuioProtos.PointOrBuilder> 
         getPathOrBuilderList();
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    TuioProtos.PointOrBuilder getPathOrBuilder(
+    com.artistech.protobuf.TuioProtos.PointOrBuilder getPathOrBuilder(
         int index);
 
     /**
@@ -4986,11 +4996,11 @@ public final class TuioProtos {
               break;
             }
             case 26: {
-              TuioProtos.Time.Builder subBuilder = null;
+              com.artistech.protobuf.TuioProtos.Time.Builder subBuilder = null;
               if (((bitField0_ & 0x00000004) == 0x00000004)) {
                 subBuilder = tuioTime_.toBuilder();
               }
-              tuioTime_ = input.readMessage(TuioProtos.Time.PARSER, extensionRegistry);
+              tuioTime_ = input.readMessage(com.artistech.protobuf.TuioProtos.Time.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(tuioTime_);
                 tuioTime_ = subBuilder.buildPartial();
@@ -4999,11 +5009,11 @@ public final class TuioProtos {
               break;
             }
             case 34: {
-              TuioProtos.Time.Builder subBuilder = null;
+              com.artistech.protobuf.TuioProtos.Time.Builder subBuilder = null;
               if (((bitField0_ & 0x00000008) == 0x00000008)) {
                 subBuilder = startTime_.toBuilder();
               }
-              startTime_ = input.readMessage(TuioProtos.Time.PARSER, extensionRegistry);
+              startTime_ = input.readMessage(com.artistech.protobuf.TuioProtos.Time.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(startTime_);
                 startTime_ = subBuilder.buildPartial();
@@ -5038,10 +5048,10 @@ public final class TuioProtos {
             }
             case 82: {
               if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
-                path_ = new java.util.ArrayList<TuioProtos.Point>();
+                path_ = new java.util.ArrayList<com.artistech.protobuf.TuioProtos.Point>();
                 mutable_bitField0_ |= 0x00000200;
               }
-              path_.add(input.readMessage(TuioProtos.Point.PARSER, extensionRegistry));
+              path_.add(input.readMessage(com.artistech.protobuf.TuioProtos.Point.PARSER, extensionRegistry));
               break;
             }
             case 88: {
@@ -5086,13 +5096,14 @@ public final class TuioProtos {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return TuioProtos.internal_static_TUIO_Object_descriptor;
+      return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Object_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return TuioProtos.internal_static_TUIO_Object_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(TuioProtos.Object.class, TuioProtos.Object.Builder.class);
+      return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Object_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.artistech.protobuf.TuioProtos.Object.class, com.artistech.protobuf.TuioProtos.Object.Builder.class);
     }
 
     public static com.google.protobuf.Parser<Object> PARSER =
@@ -5142,7 +5153,7 @@ public final class TuioProtos {
     }
 
     public static final int TUIOTIME_FIELD_NUMBER = 3;
-    private TuioProtos.Time tuioTime_;
+    private com.artistech.protobuf.TuioProtos.Time tuioTime_;
     /**
      * <code>optional .TUIO.Time tuioTime = 3;</code>
      */
@@ -5152,18 +5163,18 @@ public final class TuioProtos {
     /**
      * <code>optional .TUIO.Time tuioTime = 3;</code>
      */
-    public TuioProtos.Time getTuioTime() {
+    public com.artistech.protobuf.TuioProtos.Time getTuioTime() {
       return tuioTime_;
     }
     /**
      * <code>optional .TUIO.Time tuioTime = 3;</code>
      */
-    public TuioProtos.TimeOrBuilder getTuioTimeOrBuilder() {
+    public com.artistech.protobuf.TuioProtos.TimeOrBuilder getTuioTimeOrBuilder() {
       return tuioTime_;
     }
 
     public static final int STARTTIME_FIELD_NUMBER = 4;
-    private TuioProtos.Time startTime_;
+    private com.artistech.protobuf.TuioProtos.Time startTime_;
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
      */
@@ -5173,13 +5184,13 @@ public final class TuioProtos {
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
      */
-    public TuioProtos.Time getStartTime() {
+    public com.artistech.protobuf.TuioProtos.Time getStartTime() {
       return startTime_;
     }
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
      */
-    public TuioProtos.TimeOrBuilder getStartTimeOrBuilder() {
+    public com.artistech.protobuf.TuioProtos.TimeOrBuilder getStartTimeOrBuilder() {
       return startTime_;
     }
 
@@ -5259,17 +5270,17 @@ public final class TuioProtos {
     }
 
     public static final int PATH_FIELD_NUMBER = 10;
-    private java.util.List<TuioProtos.Point> path_;
+    private java.util.List<com.artistech.protobuf.TuioProtos.Point> path_;
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    public java.util.List<TuioProtos.Point> getPathList() {
+    public java.util.List<com.artistech.protobuf.TuioProtos.Point> getPathList() {
       return path_;
     }
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    public java.util.List<? extends TuioProtos.PointOrBuilder> 
+    public java.util.List<? extends com.artistech.protobuf.TuioProtos.PointOrBuilder> 
         getPathOrBuilderList() {
       return path_;
     }
@@ -5282,13 +5293,13 @@ public final class TuioProtos {
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    public TuioProtos.Point getPath(int index) {
+    public com.artistech.protobuf.TuioProtos.Point getPath(int index) {
       return path_.get(index);
     }
     /**
      * <code>repeated .TUIO.Point path = 10;</code>
      */
-    public TuioProtos.PointOrBuilder getPathOrBuilder(
+    public com.artistech.protobuf.TuioProtos.PointOrBuilder getPathOrBuilder(
         int index) {
       return path_.get(index);
     }
@@ -5371,8 +5382,8 @@ public final class TuioProtos {
     private void initFields() {
       x_ = 0F;
       y_ = 0F;
-      tuioTime_ = TuioProtos.Time.getDefaultInstance();
-      startTime_ = TuioProtos.Time.getDefaultInstance();
+      tuioTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
+      startTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
       sessionID_ = 0L;
       xSpeed_ = 0F;
       ySpeed_ = 0F;
@@ -5574,53 +5585,53 @@ public final class TuioProtos {
       return super.writeReplace();
     }
 
-    public static TuioProtos.Object parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Object parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static TuioProtos.Object parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Object parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static TuioProtos.Object parseFrom(byte[] data)
+    public static com.artistech.protobuf.TuioProtos.Object parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static TuioProtos.Object parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Object parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static TuioProtos.Object parseFrom(java.io.InputStream input)
+    public static com.artistech.protobuf.TuioProtos.Object parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static TuioProtos.Object parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Object parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static TuioProtos.Object parseDelimitedFrom(java.io.InputStream input)
+    public static com.artistech.protobuf.TuioProtos.Object parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static TuioProtos.Object parseDelimitedFrom(
+    public static com.artistech.protobuf.TuioProtos.Object parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static TuioProtos.Object parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Object parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static TuioProtos.Object parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Object parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5629,7 +5640,7 @@ public final class TuioProtos {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(TuioProtos.Object prototype) {
+    public static Builder newBuilder(com.artistech.protobuf.TuioProtos.Object prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -5646,19 +5657,20 @@ public final class TuioProtos {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:TUIO.Object)
-        TuioProtos.ObjectOrBuilder {
+        com.artistech.protobuf.TuioProtos.ObjectOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return TuioProtos.internal_static_TUIO_Object_descriptor;
+        return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Object_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return TuioProtos.internal_static_TUIO_Object_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(TuioProtos.Object.class, TuioProtos.Object.Builder.class);
+        return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Object_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.artistech.protobuf.TuioProtos.Object.class, com.artistech.protobuf.TuioProtos.Object.Builder.class);
       }
 
-      // Construct using TUIO.TuioProtos.Object.newBuilder()
+      // Construct using com.artistech.protobuf.TuioProtos.Object.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -5686,13 +5698,13 @@ public final class TuioProtos {
         y_ = 0F;
         bitField0_ = (bitField0_ & ~0x00000002);
         if (tuioTimeBuilder_ == null) {
-          tuioTime_ = TuioProtos.Time.getDefaultInstance();
+          tuioTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
         } else {
           tuioTimeBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000004);
         if (startTimeBuilder_ == null) {
-          startTime_ = TuioProtos.Time.getDefaultInstance();
+          startTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
         } else {
           startTimeBuilder_.clear();
         }
@@ -5732,23 +5744,23 @@ public final class TuioProtos {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return TuioProtos.internal_static_TUIO_Object_descriptor;
+        return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Object_descriptor;
       }
 
-      public TuioProtos.Object getDefaultInstanceForType() {
-        return TuioProtos.Object.getDefaultInstance();
+      public com.artistech.protobuf.TuioProtos.Object getDefaultInstanceForType() {
+        return com.artistech.protobuf.TuioProtos.Object.getDefaultInstance();
       }
 
-      public TuioProtos.Object build() {
-        TuioProtos.Object result = buildPartial();
+      public com.artistech.protobuf.TuioProtos.Object build() {
+        com.artistech.protobuf.TuioProtos.Object result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public TuioProtos.Object buildPartial() {
-        TuioProtos.Object result = new TuioProtos.Object(this);
+      public com.artistech.protobuf.TuioProtos.Object buildPartial() {
+        com.artistech.protobuf.TuioProtos.Object result = new com.artistech.protobuf.TuioProtos.Object(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -5830,16 +5842,16 @@ public final class TuioProtos {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof TuioProtos.Object) {
-          return mergeFrom((TuioProtos.Object)other);
+        if (other instanceof com.artistech.protobuf.TuioProtos.Object) {
+          return mergeFrom((com.artistech.protobuf.TuioProtos.Object)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(TuioProtos.Object other) {
-        if (other == TuioProtos.Object.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.artistech.protobuf.TuioProtos.Object other) {
+        if (other == com.artistech.protobuf.TuioProtos.Object.getDefaultInstance()) return this;
         if (other.hasX()) {
           setX(other.getX());
         }
@@ -5970,11 +5982,11 @@ public final class TuioProtos {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        TuioProtos.Object parsedMessage = null;
+        com.artistech.protobuf.TuioProtos.Object parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (TuioProtos.Object) e.getUnfinishedMessage();
+          parsedMessage = (com.artistech.protobuf.TuioProtos.Object) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -6049,9 +6061,9 @@ public final class TuioProtos {
         return this;
       }
 
-      private TuioProtos.Time tuioTime_ = TuioProtos.Time.getDefaultInstance();
+      private com.artistech.protobuf.TuioProtos.Time tuioTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder> tuioTimeBuilder_;
+          com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder> tuioTimeBuilder_;
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
@@ -6061,7 +6073,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
-      public TuioProtos.Time getTuioTime() {
+      public com.artistech.protobuf.TuioProtos.Time getTuioTime() {
         if (tuioTimeBuilder_ == null) {
           return tuioTime_;
         } else {
@@ -6071,7 +6083,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
-      public Builder setTuioTime(TuioProtos.Time value) {
+      public Builder setTuioTime(com.artistech.protobuf.TuioProtos.Time value) {
         if (tuioTimeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6088,7 +6100,7 @@ public final class TuioProtos {
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
       public Builder setTuioTime(
-          TuioProtos.Time.Builder builderForValue) {
+          com.artistech.protobuf.TuioProtos.Time.Builder builderForValue) {
         if (tuioTimeBuilder_ == null) {
           tuioTime_ = builderForValue.build();
           onChanged();
@@ -6101,12 +6113,12 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
-      public Builder mergeTuioTime(TuioProtos.Time value) {
+      public Builder mergeTuioTime(com.artistech.protobuf.TuioProtos.Time value) {
         if (tuioTimeBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004) &&
-              tuioTime_ != TuioProtos.Time.getDefaultInstance()) {
+              tuioTime_ != com.artistech.protobuf.TuioProtos.Time.getDefaultInstance()) {
             tuioTime_ =
-              TuioProtos.Time.newBuilder(tuioTime_).mergeFrom(value).buildPartial();
+              com.artistech.protobuf.TuioProtos.Time.newBuilder(tuioTime_).mergeFrom(value).buildPartial();
           } else {
             tuioTime_ = value;
           }
@@ -6122,7 +6134,7 @@ public final class TuioProtos {
        */
       public Builder clearTuioTime() {
         if (tuioTimeBuilder_ == null) {
-          tuioTime_ = TuioProtos.Time.getDefaultInstance();
+          tuioTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
           onChanged();
         } else {
           tuioTimeBuilder_.clear();
@@ -6133,7 +6145,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
-      public TuioProtos.Time.Builder getTuioTimeBuilder() {
+      public com.artistech.protobuf.TuioProtos.Time.Builder getTuioTimeBuilder() {
         bitField0_ |= 0x00000004;
         onChanged();
         return getTuioTimeFieldBuilder().getBuilder();
@@ -6141,7 +6153,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
-      public TuioProtos.TimeOrBuilder getTuioTimeOrBuilder() {
+      public com.artistech.protobuf.TuioProtos.TimeOrBuilder getTuioTimeOrBuilder() {
         if (tuioTimeBuilder_ != null) {
           return tuioTimeBuilder_.getMessageOrBuilder();
         } else {
@@ -6152,11 +6164,11 @@ public final class TuioProtos {
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder> 
+          com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder> 
           getTuioTimeFieldBuilder() {
         if (tuioTimeBuilder_ == null) {
           tuioTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder>(
+              com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder>(
                   getTuioTime(),
                   getParentForChildren(),
                   isClean());
@@ -6165,9 +6177,9 @@ public final class TuioProtos {
         return tuioTimeBuilder_;
       }
 
-      private TuioProtos.Time startTime_ = TuioProtos.Time.getDefaultInstance();
+      private com.artistech.protobuf.TuioProtos.Time startTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder> startTimeBuilder_;
+          com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder> startTimeBuilder_;
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
@@ -6177,7 +6189,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
-      public TuioProtos.Time getStartTime() {
+      public com.artistech.protobuf.TuioProtos.Time getStartTime() {
         if (startTimeBuilder_ == null) {
           return startTime_;
         } else {
@@ -6187,7 +6199,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
-      public Builder setStartTime(TuioProtos.Time value) {
+      public Builder setStartTime(com.artistech.protobuf.TuioProtos.Time value) {
         if (startTimeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6204,7 +6216,7 @@ public final class TuioProtos {
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
       public Builder setStartTime(
-          TuioProtos.Time.Builder builderForValue) {
+          com.artistech.protobuf.TuioProtos.Time.Builder builderForValue) {
         if (startTimeBuilder_ == null) {
           startTime_ = builderForValue.build();
           onChanged();
@@ -6217,12 +6229,12 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
-      public Builder mergeStartTime(TuioProtos.Time value) {
+      public Builder mergeStartTime(com.artistech.protobuf.TuioProtos.Time value) {
         if (startTimeBuilder_ == null) {
           if (((bitField0_ & 0x00000008) == 0x00000008) &&
-              startTime_ != TuioProtos.Time.getDefaultInstance()) {
+              startTime_ != com.artistech.protobuf.TuioProtos.Time.getDefaultInstance()) {
             startTime_ =
-              TuioProtos.Time.newBuilder(startTime_).mergeFrom(value).buildPartial();
+              com.artistech.protobuf.TuioProtos.Time.newBuilder(startTime_).mergeFrom(value).buildPartial();
           } else {
             startTime_ = value;
           }
@@ -6238,7 +6250,7 @@ public final class TuioProtos {
        */
       public Builder clearStartTime() {
         if (startTimeBuilder_ == null) {
-          startTime_ = TuioProtos.Time.getDefaultInstance();
+          startTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
           onChanged();
         } else {
           startTimeBuilder_.clear();
@@ -6249,7 +6261,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
-      public TuioProtos.Time.Builder getStartTimeBuilder() {
+      public com.artistech.protobuf.TuioProtos.Time.Builder getStartTimeBuilder() {
         bitField0_ |= 0x00000008;
         onChanged();
         return getStartTimeFieldBuilder().getBuilder();
@@ -6257,7 +6269,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
-      public TuioProtos.TimeOrBuilder getStartTimeOrBuilder() {
+      public com.artistech.protobuf.TuioProtos.TimeOrBuilder getStartTimeOrBuilder() {
         if (startTimeBuilder_ != null) {
           return startTimeBuilder_.getMessageOrBuilder();
         } else {
@@ -6268,11 +6280,11 @@ public final class TuioProtos {
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder> 
+          com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder> 
           getStartTimeFieldBuilder() {
         if (startTimeBuilder_ == null) {
           startTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder>(
+              com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder>(
                   getStartTime(),
                   getParentForChildren(),
                   isClean());
@@ -6441,22 +6453,22 @@ public final class TuioProtos {
         return this;
       }
 
-      private java.util.List<TuioProtos.Point> path_ =
+      private java.util.List<com.artistech.protobuf.TuioProtos.Point> path_ =
         java.util.Collections.emptyList();
       private void ensurePathIsMutable() {
         if (!((bitField0_ & 0x00000200) == 0x00000200)) {
-          path_ = new java.util.ArrayList<TuioProtos.Point>(path_);
+          path_ = new java.util.ArrayList<com.artistech.protobuf.TuioProtos.Point>(path_);
           bitField0_ |= 0x00000200;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          TuioProtos.Point, TuioProtos.Point.Builder, TuioProtos.PointOrBuilder> pathBuilder_;
+          com.artistech.protobuf.TuioProtos.Point, com.artistech.protobuf.TuioProtos.Point.Builder, com.artistech.protobuf.TuioProtos.PointOrBuilder> pathBuilder_;
 
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public java.util.List<TuioProtos.Point> getPathList() {
+      public java.util.List<com.artistech.protobuf.TuioProtos.Point> getPathList() {
         if (pathBuilder_ == null) {
           return java.util.Collections.unmodifiableList(path_);
         } else {
@@ -6476,7 +6488,7 @@ public final class TuioProtos {
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public TuioProtos.Point getPath(int index) {
+      public com.artistech.protobuf.TuioProtos.Point getPath(int index) {
         if (pathBuilder_ == null) {
           return path_.get(index);
         } else {
@@ -6487,7 +6499,7 @@ public final class TuioProtos {
        * <code>repeated .TUIO.Point path = 10;</code>
        */
       public Builder setPath(
-          int index, TuioProtos.Point value) {
+          int index, com.artistech.protobuf.TuioProtos.Point value) {
         if (pathBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6504,7 +6516,7 @@ public final class TuioProtos {
        * <code>repeated .TUIO.Point path = 10;</code>
        */
       public Builder setPath(
-          int index, TuioProtos.Point.Builder builderForValue) {
+          int index, com.artistech.protobuf.TuioProtos.Point.Builder builderForValue) {
         if (pathBuilder_ == null) {
           ensurePathIsMutable();
           path_.set(index, builderForValue.build());
@@ -6517,7 +6529,7 @@ public final class TuioProtos {
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public Builder addPath(TuioProtos.Point value) {
+      public Builder addPath(com.artistech.protobuf.TuioProtos.Point value) {
         if (pathBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6534,7 +6546,7 @@ public final class TuioProtos {
        * <code>repeated .TUIO.Point path = 10;</code>
        */
       public Builder addPath(
-          int index, TuioProtos.Point value) {
+          int index, com.artistech.protobuf.TuioProtos.Point value) {
         if (pathBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6551,7 +6563,7 @@ public final class TuioProtos {
        * <code>repeated .TUIO.Point path = 10;</code>
        */
       public Builder addPath(
-          TuioProtos.Point.Builder builderForValue) {
+          com.artistech.protobuf.TuioProtos.Point.Builder builderForValue) {
         if (pathBuilder_ == null) {
           ensurePathIsMutable();
           path_.add(builderForValue.build());
@@ -6565,7 +6577,7 @@ public final class TuioProtos {
        * <code>repeated .TUIO.Point path = 10;</code>
        */
       public Builder addPath(
-          int index, TuioProtos.Point.Builder builderForValue) {
+          int index, com.artistech.protobuf.TuioProtos.Point.Builder builderForValue) {
         if (pathBuilder_ == null) {
           ensurePathIsMutable();
           path_.add(index, builderForValue.build());
@@ -6579,7 +6591,7 @@ public final class TuioProtos {
        * <code>repeated .TUIO.Point path = 10;</code>
        */
       public Builder addAllPath(
-          java.lang.Iterable<? extends TuioProtos.Point> values) {
+          java.lang.Iterable<? extends com.artistech.protobuf.TuioProtos.Point> values) {
         if (pathBuilder_ == null) {
           ensurePathIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -6619,14 +6631,14 @@ public final class TuioProtos {
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public TuioProtos.Point.Builder getPathBuilder(
+      public com.artistech.protobuf.TuioProtos.Point.Builder getPathBuilder(
           int index) {
         return getPathFieldBuilder().getBuilder(index);
       }
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public TuioProtos.PointOrBuilder getPathOrBuilder(
+      public com.artistech.protobuf.TuioProtos.PointOrBuilder getPathOrBuilder(
           int index) {
         if (pathBuilder_ == null) {
           return path_.get(index);  } else {
@@ -6636,7 +6648,7 @@ public final class TuioProtos {
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public java.util.List<? extends TuioProtos.PointOrBuilder> 
+      public java.util.List<? extends com.artistech.protobuf.TuioProtos.PointOrBuilder> 
            getPathOrBuilderList() {
         if (pathBuilder_ != null) {
           return pathBuilder_.getMessageOrBuilderList();
@@ -6647,29 +6659,31 @@ public final class TuioProtos {
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public TuioProtos.Point.Builder addPathBuilder() {
-        return getPathFieldBuilder().addBuilder(TuioProtos.Point.getDefaultInstance());
+      public com.artistech.protobuf.TuioProtos.Point.Builder addPathBuilder() {
+        return getPathFieldBuilder().addBuilder(
+            com.artistech.protobuf.TuioProtos.Point.getDefaultInstance());
       }
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public TuioProtos.Point.Builder addPathBuilder(
+      public com.artistech.protobuf.TuioProtos.Point.Builder addPathBuilder(
           int index) {
-        return getPathFieldBuilder().addBuilder(index, TuioProtos.Point.getDefaultInstance());
+        return getPathFieldBuilder().addBuilder(
+            index, com.artistech.protobuf.TuioProtos.Point.getDefaultInstance());
       }
       /**
        * <code>repeated .TUIO.Point path = 10;</code>
        */
-      public java.util.List<TuioProtos.Point.Builder> 
+      public java.util.List<com.artistech.protobuf.TuioProtos.Point.Builder> 
            getPathBuilderList() {
         return getPathFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          TuioProtos.Point, TuioProtos.Point.Builder, TuioProtos.PointOrBuilder> 
+          com.artistech.protobuf.TuioProtos.Point, com.artistech.protobuf.TuioProtos.Point.Builder, com.artistech.protobuf.TuioProtos.PointOrBuilder> 
           getPathFieldBuilder() {
         if (pathBuilder_ == null) {
           pathBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              TuioProtos.Point, TuioProtos.Point.Builder, TuioProtos.PointOrBuilder>(
+              com.artistech.protobuf.TuioProtos.Point, com.artistech.protobuf.TuioProtos.Point.Builder, com.artistech.protobuf.TuioProtos.PointOrBuilder>(
                   path_,
                   ((bitField0_ & 0x00000200) == 0x00000200),
                   getParentForChildren(),
@@ -6855,22 +6869,22 @@ public final class TuioProtos {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required float xPos = 1;</code>
+     * <code>required float x = 1;</code>
      */
-    boolean hasXPos();
+    boolean hasX();
     /**
-     * <code>required float xPos = 1;</code>
+     * <code>required float x = 1;</code>
      */
-    float getXPos();
+    float getX();
 
     /**
-     * <code>required float yPos = 2;</code>
+     * <code>required float y = 2;</code>
      */
-    boolean hasYPos();
+    boolean hasY();
     /**
-     * <code>required float yPos = 2;</code>
+     * <code>required float y = 2;</code>
      */
-    float getYPos();
+    float getY();
 
     /**
      * <code>optional .TUIO.Time tuioTime = 3;</code>
@@ -6879,11 +6893,11 @@ public final class TuioProtos {
     /**
      * <code>optional .TUIO.Time tuioTime = 3;</code>
      */
-    TuioProtos.Time getTuioTime();
+    com.artistech.protobuf.TuioProtos.Time getTuioTime();
     /**
      * <code>optional .TUIO.Time tuioTime = 3;</code>
      */
-    TuioProtos.TimeOrBuilder getTuioTimeOrBuilder();
+    com.artistech.protobuf.TuioProtos.TimeOrBuilder getTuioTimeOrBuilder();
 
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
@@ -6892,11 +6906,11 @@ public final class TuioProtos {
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
      */
-    TuioProtos.Time getStartTime();
+    com.artistech.protobuf.TuioProtos.Time getStartTime();
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
      */
-    TuioProtos.TimeOrBuilder getStartTimeOrBuilder();
+    com.artistech.protobuf.TuioProtos.TimeOrBuilder getStartTimeOrBuilder();
   }
   /**
    * Protobuf type {@code TUIO.Point}
@@ -6952,20 +6966,20 @@ public final class TuioProtos {
             }
             case 13: {
               bitField0_ |= 0x00000001;
-              xPos_ = input.readFloat();
+              x_ = input.readFloat();
               break;
             }
             case 21: {
               bitField0_ |= 0x00000002;
-              yPos_ = input.readFloat();
+              y_ = input.readFloat();
               break;
             }
             case 26: {
-              TuioProtos.Time.Builder subBuilder = null;
+              com.artistech.protobuf.TuioProtos.Time.Builder subBuilder = null;
               if (((bitField0_ & 0x00000004) == 0x00000004)) {
                 subBuilder = tuioTime_.toBuilder();
               }
-              tuioTime_ = input.readMessage(TuioProtos.Time.PARSER, extensionRegistry);
+              tuioTime_ = input.readMessage(com.artistech.protobuf.TuioProtos.Time.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(tuioTime_);
                 tuioTime_ = subBuilder.buildPartial();
@@ -6974,11 +6988,11 @@ public final class TuioProtos {
               break;
             }
             case 34: {
-              TuioProtos.Time.Builder subBuilder = null;
+              com.artistech.protobuf.TuioProtos.Time.Builder subBuilder = null;
               if (((bitField0_ & 0x00000008) == 0x00000008)) {
                 subBuilder = startTime_.toBuilder();
               }
-              startTime_ = input.readMessage(TuioProtos.Time.PARSER, extensionRegistry);
+              startTime_ = input.readMessage(com.artistech.protobuf.TuioProtos.Time.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(startTime_);
                 startTime_ = subBuilder.buildPartial();
@@ -7000,13 +7014,14 @@ public final class TuioProtos {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return TuioProtos.internal_static_TUIO_Point_descriptor;
+      return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Point_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return TuioProtos.internal_static_TUIO_Point_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(TuioProtos.Point.class, TuioProtos.Point.Builder.class);
+      return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Point_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.artistech.protobuf.TuioProtos.Point.class, com.artistech.protobuf.TuioProtos.Point.Builder.class);
     }
 
     public static com.google.protobuf.Parser<Point> PARSER =
@@ -7025,38 +7040,38 @@ public final class TuioProtos {
     }
 
     private int bitField0_;
-    public static final int XPOS_FIELD_NUMBER = 1;
-    private float xPos_;
+    public static final int X_FIELD_NUMBER = 1;
+    private float x_;
     /**
-     * <code>required float xPos = 1;</code>
+     * <code>required float x = 1;</code>
      */
-    public boolean hasXPos() {
+    public boolean hasX() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required float xPos = 1;</code>
+     * <code>required float x = 1;</code>
      */
-    public float getXPos() {
-      return xPos_;
+    public float getX() {
+      return x_;
     }
 
-    public static final int YPOS_FIELD_NUMBER = 2;
-    private float yPos_;
+    public static final int Y_FIELD_NUMBER = 2;
+    private float y_;
     /**
-     * <code>required float yPos = 2;</code>
+     * <code>required float y = 2;</code>
      */
-    public boolean hasYPos() {
+    public boolean hasY() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required float yPos = 2;</code>
+     * <code>required float y = 2;</code>
      */
-    public float getYPos() {
-      return yPos_;
+    public float getY() {
+      return y_;
     }
 
     public static final int TUIOTIME_FIELD_NUMBER = 3;
-    private TuioProtos.Time tuioTime_;
+    private com.artistech.protobuf.TuioProtos.Time tuioTime_;
     /**
      * <code>optional .TUIO.Time tuioTime = 3;</code>
      */
@@ -7066,18 +7081,18 @@ public final class TuioProtos {
     /**
      * <code>optional .TUIO.Time tuioTime = 3;</code>
      */
-    public TuioProtos.Time getTuioTime() {
+    public com.artistech.protobuf.TuioProtos.Time getTuioTime() {
       return tuioTime_;
     }
     /**
      * <code>optional .TUIO.Time tuioTime = 3;</code>
      */
-    public TuioProtos.TimeOrBuilder getTuioTimeOrBuilder() {
+    public com.artistech.protobuf.TuioProtos.TimeOrBuilder getTuioTimeOrBuilder() {
       return tuioTime_;
     }
 
     public static final int STARTTIME_FIELD_NUMBER = 4;
-    private TuioProtos.Time startTime_;
+    private com.artistech.protobuf.TuioProtos.Time startTime_;
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
      */
@@ -7087,21 +7102,21 @@ public final class TuioProtos {
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
      */
-    public TuioProtos.Time getStartTime() {
+    public com.artistech.protobuf.TuioProtos.Time getStartTime() {
       return startTime_;
     }
     /**
      * <code>optional .TUIO.Time startTime = 4;</code>
      */
-    public TuioProtos.TimeOrBuilder getStartTimeOrBuilder() {
+    public com.artistech.protobuf.TuioProtos.TimeOrBuilder getStartTimeOrBuilder() {
       return startTime_;
     }
 
     private void initFields() {
-      xPos_ = 0F;
-      yPos_ = 0F;
-      tuioTime_ = TuioProtos.Time.getDefaultInstance();
-      startTime_ = TuioProtos.Time.getDefaultInstance();
+      x_ = 0F;
+      y_ = 0F;
+      tuioTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
+      startTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -7109,11 +7124,11 @@ public final class TuioProtos {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasXPos()) {
+      if (!hasX()) {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasYPos()) {
+      if (!hasY()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -7137,10 +7152,10 @@ public final class TuioProtos {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeFloat(1, xPos_);
+        output.writeFloat(1, x_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeFloat(2, yPos_);
+        output.writeFloat(2, y_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeMessage(3, tuioTime_);
@@ -7159,11 +7174,11 @@ public final class TuioProtos {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(1, xPos_);
+          .computeFloatSize(1, x_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, yPos_);
+          .computeFloatSize(2, y_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
@@ -7185,53 +7200,53 @@ public final class TuioProtos {
       return super.writeReplace();
     }
 
-    public static TuioProtos.Point parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Point parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static TuioProtos.Point parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Point parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static TuioProtos.Point parseFrom(byte[] data)
+    public static com.artistech.protobuf.TuioProtos.Point parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static TuioProtos.Point parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Point parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static TuioProtos.Point parseFrom(java.io.InputStream input)
+    public static com.artistech.protobuf.TuioProtos.Point parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static TuioProtos.Point parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Point parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static TuioProtos.Point parseDelimitedFrom(java.io.InputStream input)
+    public static com.artistech.protobuf.TuioProtos.Point parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static TuioProtos.Point parseDelimitedFrom(
+    public static com.artistech.protobuf.TuioProtos.Point parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static TuioProtos.Point parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Point parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static TuioProtos.Point parseFrom(
+    public static com.artistech.protobuf.TuioProtos.Point parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7240,7 +7255,7 @@ public final class TuioProtos {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(TuioProtos.Point prototype) {
+    public static Builder newBuilder(com.artistech.protobuf.TuioProtos.Point prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -7257,19 +7272,20 @@ public final class TuioProtos {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:TUIO.Point)
-        TuioProtos.PointOrBuilder {
+        com.artistech.protobuf.TuioProtos.PointOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return TuioProtos.internal_static_TUIO_Point_descriptor;
+        return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Point_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return TuioProtos.internal_static_TUIO_Point_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(TuioProtos.Point.class, TuioProtos.Point.Builder.class);
+        return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Point_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.artistech.protobuf.TuioProtos.Point.class, com.artistech.protobuf.TuioProtos.Point.Builder.class);
       }
 
-      // Construct using TUIO.TuioProtos.Point.newBuilder()
+      // Construct using com.artistech.protobuf.TuioProtos.Point.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -7291,18 +7307,18 @@ public final class TuioProtos {
 
       public Builder clear() {
         super.clear();
-        xPos_ = 0F;
+        x_ = 0F;
         bitField0_ = (bitField0_ & ~0x00000001);
-        yPos_ = 0F;
+        y_ = 0F;
         bitField0_ = (bitField0_ & ~0x00000002);
         if (tuioTimeBuilder_ == null) {
-          tuioTime_ = TuioProtos.Time.getDefaultInstance();
+          tuioTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
         } else {
           tuioTimeBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000004);
         if (startTimeBuilder_ == null) {
-          startTime_ = TuioProtos.Time.getDefaultInstance();
+          startTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
         } else {
           startTimeBuilder_.clear();
         }
@@ -7316,33 +7332,33 @@ public final class TuioProtos {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return TuioProtos.internal_static_TUIO_Point_descriptor;
+        return com.artistech.protobuf.TuioProtos.internal_static_TUIO_Point_descriptor;
       }
 
-      public TuioProtos.Point getDefaultInstanceForType() {
-        return TuioProtos.Point.getDefaultInstance();
+      public com.artistech.protobuf.TuioProtos.Point getDefaultInstanceForType() {
+        return com.artistech.protobuf.TuioProtos.Point.getDefaultInstance();
       }
 
-      public TuioProtos.Point build() {
-        TuioProtos.Point result = buildPartial();
+      public com.artistech.protobuf.TuioProtos.Point build() {
+        com.artistech.protobuf.TuioProtos.Point result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public TuioProtos.Point buildPartial() {
-        TuioProtos.Point result = new TuioProtos.Point(this);
+      public com.artistech.protobuf.TuioProtos.Point buildPartial() {
+        com.artistech.protobuf.TuioProtos.Point result = new com.artistech.protobuf.TuioProtos.Point(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.xPos_ = xPos_;
+        result.x_ = x_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.yPos_ = yPos_;
+        result.y_ = y_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
@@ -7365,21 +7381,21 @@ public final class TuioProtos {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof TuioProtos.Point) {
-          return mergeFrom((TuioProtos.Point)other);
+        if (other instanceof com.artistech.protobuf.TuioProtos.Point) {
+          return mergeFrom((com.artistech.protobuf.TuioProtos.Point)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(TuioProtos.Point other) {
-        if (other == TuioProtos.Point.getDefaultInstance()) return this;
-        if (other.hasXPos()) {
-          setXPos(other.getXPos());
+      public Builder mergeFrom(com.artistech.protobuf.TuioProtos.Point other) {
+        if (other == com.artistech.protobuf.TuioProtos.Point.getDefaultInstance()) return this;
+        if (other.hasX()) {
+          setX(other.getX());
         }
-        if (other.hasYPos()) {
-          setYPos(other.getYPos());
+        if (other.hasY()) {
+          setY(other.getY());
         }
         if (other.hasTuioTime()) {
           mergeTuioTime(other.getTuioTime());
@@ -7392,11 +7408,11 @@ public final class TuioProtos {
       }
 
       public final boolean isInitialized() {
-        if (!hasXPos()) {
+        if (!hasX()) {
           
           return false;
         }
-        if (!hasYPos()) {
+        if (!hasY()) {
           
           return false;
         }
@@ -7419,11 +7435,11 @@ public final class TuioProtos {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        TuioProtos.Point parsedMessage = null;
+        com.artistech.protobuf.TuioProtos.Point parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (TuioProtos.Point) e.getUnfinishedMessage();
+          parsedMessage = (com.artistech.protobuf.TuioProtos.Point) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -7434,73 +7450,73 @@ public final class TuioProtos {
       }
       private int bitField0_;
 
-      private float xPos_ ;
+      private float x_ ;
       /**
-       * <code>required float xPos = 1;</code>
+       * <code>required float x = 1;</code>
        */
-      public boolean hasXPos() {
+      public boolean hasX() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required float xPos = 1;</code>
+       * <code>required float x = 1;</code>
        */
-      public float getXPos() {
-        return xPos_;
+      public float getX() {
+        return x_;
       }
       /**
-       * <code>required float xPos = 1;</code>
+       * <code>required float x = 1;</code>
        */
-      public Builder setXPos(float value) {
+      public Builder setX(float value) {
         bitField0_ |= 0x00000001;
-        xPos_ = value;
+        x_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required float xPos = 1;</code>
+       * <code>required float x = 1;</code>
        */
-      public Builder clearXPos() {
+      public Builder clearX() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        xPos_ = 0F;
+        x_ = 0F;
         onChanged();
         return this;
       }
 
-      private float yPos_ ;
+      private float y_ ;
       /**
-       * <code>required float yPos = 2;</code>
+       * <code>required float y = 2;</code>
        */
-      public boolean hasYPos() {
+      public boolean hasY() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required float yPos = 2;</code>
+       * <code>required float y = 2;</code>
        */
-      public float getYPos() {
-        return yPos_;
+      public float getY() {
+        return y_;
       }
       /**
-       * <code>required float yPos = 2;</code>
+       * <code>required float y = 2;</code>
        */
-      public Builder setYPos(float value) {
+      public Builder setY(float value) {
         bitField0_ |= 0x00000002;
-        yPos_ = value;
+        y_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required float yPos = 2;</code>
+       * <code>required float y = 2;</code>
        */
-      public Builder clearYPos() {
+      public Builder clearY() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        yPos_ = 0F;
+        y_ = 0F;
         onChanged();
         return this;
       }
 
-      private TuioProtos.Time tuioTime_ = TuioProtos.Time.getDefaultInstance();
+      private com.artistech.protobuf.TuioProtos.Time tuioTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder> tuioTimeBuilder_;
+          com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder> tuioTimeBuilder_;
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
@@ -7510,7 +7526,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
-      public TuioProtos.Time getTuioTime() {
+      public com.artistech.protobuf.TuioProtos.Time getTuioTime() {
         if (tuioTimeBuilder_ == null) {
           return tuioTime_;
         } else {
@@ -7520,7 +7536,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
-      public Builder setTuioTime(TuioProtos.Time value) {
+      public Builder setTuioTime(com.artistech.protobuf.TuioProtos.Time value) {
         if (tuioTimeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7537,7 +7553,7 @@ public final class TuioProtos {
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
       public Builder setTuioTime(
-          TuioProtos.Time.Builder builderForValue) {
+          com.artistech.protobuf.TuioProtos.Time.Builder builderForValue) {
         if (tuioTimeBuilder_ == null) {
           tuioTime_ = builderForValue.build();
           onChanged();
@@ -7550,12 +7566,12 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
-      public Builder mergeTuioTime(TuioProtos.Time value) {
+      public Builder mergeTuioTime(com.artistech.protobuf.TuioProtos.Time value) {
         if (tuioTimeBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004) &&
-              tuioTime_ != TuioProtos.Time.getDefaultInstance()) {
+              tuioTime_ != com.artistech.protobuf.TuioProtos.Time.getDefaultInstance()) {
             tuioTime_ =
-              TuioProtos.Time.newBuilder(tuioTime_).mergeFrom(value).buildPartial();
+              com.artistech.protobuf.TuioProtos.Time.newBuilder(tuioTime_).mergeFrom(value).buildPartial();
           } else {
             tuioTime_ = value;
           }
@@ -7571,7 +7587,7 @@ public final class TuioProtos {
        */
       public Builder clearTuioTime() {
         if (tuioTimeBuilder_ == null) {
-          tuioTime_ = TuioProtos.Time.getDefaultInstance();
+          tuioTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
           onChanged();
         } else {
           tuioTimeBuilder_.clear();
@@ -7582,7 +7598,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
-      public TuioProtos.Time.Builder getTuioTimeBuilder() {
+      public com.artistech.protobuf.TuioProtos.Time.Builder getTuioTimeBuilder() {
         bitField0_ |= 0x00000004;
         onChanged();
         return getTuioTimeFieldBuilder().getBuilder();
@@ -7590,7 +7606,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
-      public TuioProtos.TimeOrBuilder getTuioTimeOrBuilder() {
+      public com.artistech.protobuf.TuioProtos.TimeOrBuilder getTuioTimeOrBuilder() {
         if (tuioTimeBuilder_ != null) {
           return tuioTimeBuilder_.getMessageOrBuilder();
         } else {
@@ -7601,11 +7617,11 @@ public final class TuioProtos {
        * <code>optional .TUIO.Time tuioTime = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder> 
+          com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder> 
           getTuioTimeFieldBuilder() {
         if (tuioTimeBuilder_ == null) {
           tuioTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder>(
+              com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder>(
                   getTuioTime(),
                   getParentForChildren(),
                   isClean());
@@ -7614,9 +7630,9 @@ public final class TuioProtos {
         return tuioTimeBuilder_;
       }
 
-      private TuioProtos.Time startTime_ = TuioProtos.Time.getDefaultInstance();
+      private com.artistech.protobuf.TuioProtos.Time startTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder> startTimeBuilder_;
+          com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder> startTimeBuilder_;
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
@@ -7626,7 +7642,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
-      public TuioProtos.Time getStartTime() {
+      public com.artistech.protobuf.TuioProtos.Time getStartTime() {
         if (startTimeBuilder_ == null) {
           return startTime_;
         } else {
@@ -7636,7 +7652,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
-      public Builder setStartTime(TuioProtos.Time value) {
+      public Builder setStartTime(com.artistech.protobuf.TuioProtos.Time value) {
         if (startTimeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7653,7 +7669,7 @@ public final class TuioProtos {
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
       public Builder setStartTime(
-          TuioProtos.Time.Builder builderForValue) {
+          com.artistech.protobuf.TuioProtos.Time.Builder builderForValue) {
         if (startTimeBuilder_ == null) {
           startTime_ = builderForValue.build();
           onChanged();
@@ -7666,12 +7682,12 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
-      public Builder mergeStartTime(TuioProtos.Time value) {
+      public Builder mergeStartTime(com.artistech.protobuf.TuioProtos.Time value) {
         if (startTimeBuilder_ == null) {
           if (((bitField0_ & 0x00000008) == 0x00000008) &&
-              startTime_ != TuioProtos.Time.getDefaultInstance()) {
+              startTime_ != com.artistech.protobuf.TuioProtos.Time.getDefaultInstance()) {
             startTime_ =
-              TuioProtos.Time.newBuilder(startTime_).mergeFrom(value).buildPartial();
+              com.artistech.protobuf.TuioProtos.Time.newBuilder(startTime_).mergeFrom(value).buildPartial();
           } else {
             startTime_ = value;
           }
@@ -7687,7 +7703,7 @@ public final class TuioProtos {
        */
       public Builder clearStartTime() {
         if (startTimeBuilder_ == null) {
-          startTime_ = TuioProtos.Time.getDefaultInstance();
+          startTime_ = com.artistech.protobuf.TuioProtos.Time.getDefaultInstance();
           onChanged();
         } else {
           startTimeBuilder_.clear();
@@ -7698,7 +7714,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
-      public TuioProtos.Time.Builder getStartTimeBuilder() {
+      public com.artistech.protobuf.TuioProtos.Time.Builder getStartTimeBuilder() {
         bitField0_ |= 0x00000008;
         onChanged();
         return getStartTimeFieldBuilder().getBuilder();
@@ -7706,7 +7722,7 @@ public final class TuioProtos {
       /**
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
-      public TuioProtos.TimeOrBuilder getStartTimeOrBuilder() {
+      public com.artistech.protobuf.TuioProtos.TimeOrBuilder getStartTimeOrBuilder() {
         if (startTimeBuilder_ != null) {
           return startTimeBuilder_.getMessageOrBuilder();
         } else {
@@ -7717,11 +7733,11 @@ public final class TuioProtos {
        * <code>optional .TUIO.Time startTime = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder> 
+          com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder> 
           getStartTimeFieldBuilder() {
         if (startTimeBuilder_ == null) {
           startTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              TuioProtos.Time, TuioProtos.Time.Builder, TuioProtos.TimeOrBuilder>(
+              com.artistech.protobuf.TuioProtos.Time, com.artistech.protobuf.TuioProtos.Time.Builder, com.artistech.protobuf.TuioProtos.TimeOrBuilder>(
                   getStartTime(),
                   getParentForChildren(),
                   isClean());
@@ -7799,10 +7815,11 @@ public final class TuioProtos {
       "nSpeed\030\010 \001(\002\022\023\n\013motionAccel\030\t \001(\002\022\031\n\004pat" +
       "h\030\n \003(\0132\013.TUIO.Point\022\021\n\ttuioState\030\013 \002(\005\022" +
       "\020\n\010symbolID\030\014 \002(\005\022\r\n\005angle\030\r \002(\002\022\025\n\rrota" +
-      "tionSpeed\030\016 \002(\002\022\025\n\rrotationAccel\030\017 \002(\002\"`" +
-      "\n\005Point\022\014\n\004xPos\030\001 \002(\002\022\014\n\004yPos\030\002 \002(\002\022\034\n\010t" +
-      "uioTime\030\003 \001(\0132\n.TUIO.Time\022\035\n\tstartTime\030\004" +
-      " \001(\0132\n.TUIO.TimeB\022\n\004TUIOB\nTuioProtos"
+      "tionSpeed\030\016 \002(\002\022\025\n\rrotationAccel\030\017 \002(\002\"Z" +
+      "\n\005Point\022\t\n\001x\030\001 \002(\002\022\t\n\001y\030\002 \002(\002\022\034\n\010tuioTim" +
+      "e\030\003 \001(\0132\n.TUIO.Time\022\035\n\tstartTime\030\004 \001(\0132\n" +
+      ".TUIO.TimeB$\n\026com.artistech.protobufB\nTu" +
+      "ioProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7845,7 +7862,7 @@ public final class TuioProtos {
     internal_static_TUIO_Point_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_TUIO_Point_descriptor,
-        new java.lang.String[] { "XPos", "YPos", "TuioTime", "StartTime", });
+        new java.lang.String[] { "X", "Y", "TuioTime", "StartTime", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

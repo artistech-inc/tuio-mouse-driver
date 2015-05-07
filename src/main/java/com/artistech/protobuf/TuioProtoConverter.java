@@ -22,7 +22,11 @@ import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.ServiceLoader;
 import org.apache.commons.lang3.ClassUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.logging.Log;
@@ -35,10 +39,17 @@ import org.apache.commons.logging.LogFactory;
 public class TuioProtoConverter implements ProtoConverter {
 
     private static final Log logger = LogFactory.getLog(TuioProtoConverter.class);
+    private static final ServiceLoader<ProtoConverter> services;
+
+    public static boolean DeepCopy = false;
+
+    static {
+        services = ServiceLoader.load(ProtoConverter.class);
+    }
 
     public TuioProtoConverter() {
     }
-    
+
     @Override
     public GeneratedMessage.Builder convertToProtobuf(Object obj) {
         GeneratedMessage.Builder builder;
@@ -51,6 +62,8 @@ public class TuioProtoConverter implements ProtoConverter {
             builder = TuioProtos.Object.newBuilder();
         } else if (obj.getClass().getName().equals(TUIO.TuioBlob.class.getName())) {
             builder = TuioProtos.Blob.newBuilder();
+        } else if (obj.getClass().getName().equals(TUIO.TuioPoint.class.getName())) {
+            builder = TuioProtos.Point.newBuilder();
         } else {
             return null;
         }
@@ -64,28 +77,67 @@ public class TuioProtoConverter implements ProtoConverter {
                 for (PropertyDescriptor prop2 : builderProps) {
                     if (prop1.getName().equals(prop2.getName())) {
                         Method readMethod = prop1.getReadMethod();
-                        Method method = null;
+                        ArrayList<Method> methodsToTry = new ArrayList<>();
                         for (Method m : methods) {
                             if (m.getName().equals(readMethod.getName().replaceFirst("get", "set"))) {
-                                method = m;
-                                break;
+                                methodsToTry.add(m);
                             }
                         }
-                        try {
-                            if (method != null && prop1.getReadMethod() != null) {
-                                boolean primitiveOrWrapper = ClassUtils.isPrimitiveOrWrapper(prop1.getReadMethod().getReturnType());
 
-                                if (primitiveOrWrapper) {
-                                    method.invoke(builder, prop1.getReadMethod().invoke(obj));
+                        for (Method setMethod : methodsToTry) {
+                            try {
+                                if (Iterable.class.isAssignableFrom(readMethod.getReturnType())) {
+                                    if (DeepCopy) {
+                                        ArrayList<Method> methodsToTry2 = new ArrayList<>();
+                                        for (Method m : methods) {
+                                            if (m.getName().equals(readMethod.getName().replaceFirst("get", "add"))) {
+                                                methodsToTry2.add(m);
+                                            }
+                                        }
+
+                                        boolean success = false;
+                                        for (Method setMethod2 : methodsToTry2) {
+                                            Iterable iter = (Iterable) readMethod.invoke(obj);
+                                            Iterator it = iter.iterator();
+                                            while (it.hasNext()) {
+                                                Object o = it.next();
+                                                //call set..
+                                                for (ProtoConverter converter : services) {
+                                                    if (converter.supportsConversion(o)) {
+                                                        try {
+                                                            GeneratedMessage.Builder convertToProtobuf = converter.convertToProtobuf(o);
+                                                            setMethod2.invoke(builder, convertToProtobuf);
+                                                            success = true;
+                                                            break;
+                                                        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
+
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            if (success) {
+                                                break;
+                                            }
+                                        }
+                                    }
                                 } else {
-                                    Object invoke = prop1.getReadMethod().invoke(obj);
-                                    com.google.protobuf.GeneratedMessage.Builder val = convertToProtobuf(invoke);
-                                    method.invoke(builder, val);
+                                    boolean primitiveOrWrapper = ClassUtils.isPrimitiveOrWrapper(readMethod.getReturnType());
+
+                                    if (primitiveOrWrapper) {
+                                        setMethod.invoke(builder, readMethod.invoke(obj));
+                                    } else {
+                                        Object invoke = readMethod.invoke(obj);
+                                        com.google.protobuf.GeneratedMessage.Builder val = convertToProtobuf(invoke);
+
+                                        setMethod.invoke(builder, val);
+                                        break;
+                                    }
                                 }
+                            } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
+//                            Logger.getLogger(TuioProtoConverter.class.getName()).log(Level.SEVERE, null, ex);
                             }
-                        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | SecurityException ex) {
+                            break;
                         }
-                        break;
                     }
                 }
             }
@@ -97,7 +149,7 @@ public class TuioProtoConverter implements ProtoConverter {
     }
 
     @Override
-    public Object convertFromProtobuf(GeneratedMessage obj) {
+    public Object convertFromProtobuf(final GeneratedMessage obj) {
         Object target;
 
         if (TuioProtos.Blob.class.isAssignableFrom(obj.getClass())) {
@@ -108,6 +160,8 @@ public class TuioProtoConverter implements ProtoConverter {
             target = new TUIO.TuioCursor();
         } else if (TuioProtos.Object.class.isAssignableFrom(obj.getClass())) {
             target = new TUIO.TuioObject();
+        } else if (TuioProtos.Point.class.isAssignableFrom(obj.getClass())) {
+            target = new TUIO.TuioPoint();
         } else {
             return null;
         }
@@ -132,23 +186,48 @@ public class TuioProtoConverter implements ProtoConverter {
                         }
                         try {
                             if (writeMethod != null && readMethod != null && targetProp.getReadMethod() != null) {
-//                                System.out.println("Prop2 Name!: " + messageProp.getName());
                                 boolean primitiveOrWrapper = ClassUtils.isPrimitiveOrWrapper(targetProp.getReadMethod().getReturnType());
 
-                                if (primitiveOrWrapper) {
+                                if (readMethod.getParameterCount() > 0) {
+                                    if (DeepCopy) {
+                                        if (!Modifier.isAbstract(targetProp.getPropertyType().getModifiers())) {
+                                            //basically, ArrayList
+                                            Object newInstance = targetProp.getPropertyType().newInstance();
+                                            Method addMethod = newInstance.getClass().getMethod("add", Object.class);
+                                            Method m = obj.getClass().getMethod(readMethod.getName() + "Count");
+                                            int size = (int) m.invoke(obj);
+                                            for (int ii = 0; ii < size; ii++) {
+                                                Object o = readMethod.invoke(obj, ii);
+                                                addMethod.invoke(newInstance, o);
+                                            }
+                                            writeMethod.invoke(target, newInstance);
+                                        } else if (Collection.class.isAssignableFrom(targetProp.getPropertyType())) {
+                                            //do something if it is a collection or iterable...
+                                        }
+                                    }
+                                } else if (primitiveOrWrapper) {
                                     writeMethod.invoke(target, messageProp.getReadMethod().invoke(obj));
                                 } else {
                                     if (GeneratedMessage.class.isAssignableFrom(messageProp.getReadMethod().getReturnType())) {
+
                                         GeneratedMessage invoke = (GeneratedMessage) messageProp.getReadMethod().invoke(obj);
-                                        Object val = convertFromProtobuf(invoke);
-                                        writeMethod.invoke(target, val);
+                                        Object val = null;
+                                        for (ProtoConverter converter : services) {
+                                            if (converter.supportsConversion(invoke)) {
+                                                val = convertFromProtobuf(invoke);
+                                                break;
+                                            }
+                                        }
+                                        if (val != null) {
+                                            writeMethod.invoke(target, val);
+                                        }
                                     }
 //                                    System.out.println("Prop1 Name!: " + targetProp.getName());
                                 }
                             }
                         } catch (NullPointerException ex) {
                             //Logger.getLogger(ZeroMqMouse.class.getName()).log(Level.SEVERE, null, ex);
-                        } catch (IllegalArgumentException | SecurityException | IllegalAccessException | InvocationTargetException ex) {
+                        } catch (InstantiationException | NoSuchMethodException | IllegalArgumentException | SecurityException | IllegalAccessException | InvocationTargetException ex) {
                             logger.error(ex);
                         }
                         break;
@@ -168,6 +247,7 @@ public class TuioProtoConverter implements ProtoConverter {
         ret.add(new ImmutablePair<>(com.artistech.protobuf.TuioProtos.Cursor.class.getName(), TUIO.TuioCursor.class.getName()));
         ret.add(new ImmutablePair<>(com.artistech.protobuf.TuioProtos.Blob.class.getName(), TUIO.TuioBlob.class.getName()));
         ret.add(new ImmutablePair<>(com.artistech.protobuf.TuioProtos.Time.class.getName(), TUIO.TuioTime.class.getName()));
+        ret.add(new ImmutablePair<>(com.artistech.protobuf.TuioProtos.Point.class.getName(), TUIO.TuioPoint.class.getName()));
         return ret;
     }
 

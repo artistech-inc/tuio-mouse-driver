@@ -77,8 +77,8 @@ message Object {
 
 message Point {
 
-    required float xPos = 1;
-    required float yPos = 2;
+    optional float xPos = 1;
+    optional float yPos = 2;
     optional Time tuioTime = 3;
     optional Time startTime = 4;
 
