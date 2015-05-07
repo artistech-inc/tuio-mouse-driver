@@ -27,6 +27,11 @@ import java.awt.Toolkit;
 import java.awt.event.InputEvent;
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.HelpFormatter;
+import org.apache.commons.cli.Options;
+import org.apache.commons.cli.ParseException;
 import org.apache.commons.lang3.tuple.MutableTriple;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -213,25 +218,39 @@ public class MouseDriver implements TuioListener {
     /**
      * Main: can take a port value as an argument.
      *
-     * @param argv
+     * @param args
      */
-    public static void main(String argv[]) {
+    public static void main(String args[]) {
+        int tuio_port = 3333;
 
-        int port = 3333;
+        Options options = new Options();
+        options.addOption("t", "tuio-port", true, "TUIO Port to listen on. (Default = 3333)");
+        options.addOption("h", "help", false, "Show this message.");
+        HelpFormatter formatter = new HelpFormatter();
 
-        if (argv.length == 1) {
-            try {
-                port = Integer.parseInt(argv[1]);
-            } catch (NumberFormatException e) {
-                System.out.println(MessageFormat.format("Port value '{0}' not recognized.", argv[1]));
+        try {
+            CommandLineParser parser = new org.apache.commons.cli.BasicParser();
+            CommandLine cmd = parser.parse(options, args);
+
+            if (cmd.hasOption("help")) {
+                formatter.printHelp("tuio-mouse-driver", options);
+                return;
+            } else {
+                if (cmd.hasOption("t") || cmd.hasOption("tuio-port")) {
+                    tuio_port = Integer.parseInt(cmd.getOptionValue("t"));
+                }
             }
+        } catch (ParseException | NumberFormatException ex) {
+            System.err.println("Error Processing Command Options:");
+            formatter.printHelp("tuio-mouse-driver", options);
+            return;
         }
 
         try {
             MouseDriver mouse = new MouseDriver();
-            TuioClient client = new TuioClient(port);
+            TuioClient client = new TuioClient(tuio_port);
 
-            logger.info(MessageFormat.format("Listening to TUIO message at port: {0}", Integer.toString(port)));
+            logger.info(MessageFormat.format("Listening to TUIO message at port: {0}", Integer.toString(tuio_port)));
             client.addTuioListener(mouse);
             client.connect();
         } catch (AWTException e) {
