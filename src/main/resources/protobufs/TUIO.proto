@@ -1,6 +1,6 @@
 package TUIO;
 
-option java_package = "TUIO";
+option java_package = "com.artistech.protobuf";
 option java_outer_classname = "TuioProtos";
 
 message Time {
