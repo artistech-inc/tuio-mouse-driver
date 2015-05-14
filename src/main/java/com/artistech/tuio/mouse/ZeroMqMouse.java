@@ -23,7 +23,6 @@ import java.awt.AWTException;
 import java.io.ByteArrayInputStream;
 import java.io.ObjectInput;
 import java.io.ObjectInputStream;
-import java.util.HashMap;
 import java.util.ServiceLoader;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -92,7 +91,8 @@ public class ZeroMqMouse {
         subscriber.setIdentity(ZeroMqMouse.class.getName().getBytes());
 
         //this could change I guess so we can get different data subscrptions.
-        subscriber.subscribe("".getBytes());
+        subscriber.subscribe("TuioCursor".getBytes());
+//        subscriber.subscribe("TuioTime".getBytes());
         subscriber.connect("tcp://" + zeromq_port);
 
         System.out.println("Subscribed to " + zeromq_port + " for ZeroMQ messages.");
@@ -102,108 +102,125 @@ public class ZeroMqMouse {
         MouseDriver md = new MouseDriver();
         while (!msg.equalsIgnoreCase("END")) {
             boolean success = false;
-            byte[] recv = subscriber.recv(0);
+            byte[] recv = subscriber.recv();
 
-            try {
-                //Try reading the data as a serialized Java object:
-                try (ByteArrayInputStream bis = new ByteArrayInputStream(recv)) {
-                    //Try reading the data as a serialized Java object:
-                    ObjectInput in = new ObjectInputStream(bis);
-                    Object o = in.readObject();
-                    //if it is of type Point (Cursor, Object, Blob), process:
-                    if (TuioPoint.class.isAssignableFrom(o.getClass())) {
-                        TuioPoint pt = (TuioPoint) o;
-                        process(pt, md);
-                    }
-
-                    success = true;
-                }
-            } catch (java.io.IOException | ClassNotFoundException ex) {
-            } finally {
-            }
-
-            if (!success) {
-                //if we still haven't deserialized the message, try using protobufs
-                com.google.protobuf.GeneratedMessage message = null;
-                try {
-                    //is it time?
-                    message = com.artistech.protobuf.TuioProtos.Time.parseFrom(recv);
-                    success = true;
-                } catch (Exception ex) {
-                }
-                if (!success) {
+            com.google.protobuf.GeneratedMessage message = null;
+            TuioPoint pt = null;
+            String type = recv.length > 0 ? new String(recv) : "";
+            recv = subscriber.recv();
+            switch (type) {
+                case "TuioCursor.PROTOBUF":
                     try {
                         //it is a cursor?
                         message = com.artistech.protobuf.TuioProtos.Cursor.parseFrom(recv);
                         success = true;
                     } catch (Exception ex) {
                     }
-                }
-                if (!success) {
+                    break;
+                case "TuioTime.PROTOBUF":
+//                    try {
+//                        //it is a cursor?
+//                        message = com.artistech.protobuf.TuioProtos.Time.parseFrom(recv);
+//                        success = true;
+//                    } catch (Exception ex) {
+//                    }
+                    break;
+                case "TuioObject.PROTOBUF":
                     try {
-                        //is it an object?
+                        //it is a cursor?
                         message = com.artistech.protobuf.TuioProtos.Object.parseFrom(recv);
                         success = true;
                     } catch (Exception ex) {
                     }
-                }
-                if (!success) {
+                    break;
+                case "TuioBlob.PROTOBUF":
                     try {
-                        //is it a blob?
+                        //it is a cursor?
                         message = com.artistech.protobuf.TuioProtos.Blob.parseFrom(recv);
                         success = true;
                     } catch (Exception ex) {
                     }
-                }
-                if (message == null) {
-                    success = false;
-                }
-
-                if (success) {
-                    //ok, so we have a message that is not null, so it was protobuf:
-                    Object o = null;
-
-                    //look for a converter that will suppor this objec type and convert:
-                    for (ProtoConverter converter : services) {
-                        if (converter.supportsConversion(message)) {
-                            o = converter.convertFromProtobuf(message);
-                            break;
-                        }
-                    }
-
-                    //if the type is of type Point (Cursor, Blob, Object), process:
-                    if (o != null && TuioPoint.class.isAssignableFrom(o.getClass())) {
-                        TuioPoint pt = (TuioPoint) o;
-                        process(pt, md);
+                    break;
+                case "TuioCursor.JSON":
+                    try {
+                        //it is a cursor?
+                        pt = mapper.readValue(recv, TUIO.TuioCursor.class);
                         success = true;
+                    } catch (Exception ex) {
                     }
+                    break;
+                case "TuioTime.JSON":
+//                    try {
+//                        //it is a cursor?
+//                        pt = mapper.readValue(recv, TUIO.TuioTime.class);
+//                        success = true;
+//                    } catch (Exception ex) {
+//                    }
+                    break;
+                case "TuioObject.JSON":
+                    try {
+                        //it is a cursor?
+                        pt = mapper.readValue(recv, TUIO.TuioObject.class);
+                        success = true;
+                    } catch (Exception ex) {
+                    }
+                    break;
+                case "TuioBlob.JSON":
+                    try {
+                        //it is a cursor?
+                        pt = mapper.readValue(recv, TUIO.TuioBlob.class);
+                        success = true;
+                    } catch (Exception ex) {
+                    }
+                    break;
+                case "TuioTime.OBJECT":
+                    break;
+                case "TuioCursor.OBJECT":
+                case "TuioObject.OBJECT":
+                case "TuioBlob.OBJECT":
+                    try {
+                        //Try reading the data as a serialized Java object:
+                        try (ByteArrayInputStream bis = new ByteArrayInputStream(recv)) {
+                            //Try reading the data as a serialized Java object:
+                            ObjectInput in = new ObjectInputStream(bis);
+                            Object o = in.readObject();
+                            //if it is of type Point (Cursor, Object, Blob), process:
+                            if (TuioPoint.class.isAssignableFrom(o.getClass())) {
+                                pt = (TuioPoint) o;
+                                process(pt, md);
+                            }
+
+                            success = true;
+                        }
+                    } catch (java.io.IOException | ClassNotFoundException ex) {
+                    } finally {
+                    }
+                    break;
+                default:
+                    success = false;
+                    break;
+            }
+
+            if (message != null && success) {
+                //ok, so we have a message that is not null, so it was protobuf:
+                Object o = null;
+
+                //look for a converter that will suppor this objec type and convert:
+                for (ProtoConverter converter : services) {
+                    if (converter.supportsConversion(message)) {
+                        o = converter.convertFromProtobuf(message);
+                        break;
+                    }
+                }
+
+                //if the type is of type Point (Cursor, Blob, Object), process:
+                if (o != null && TuioPoint.class.isAssignableFrom(o.getClass())) {
+                    pt = (TuioPoint) o;
                 }
             }
 
-            //try reading the data as a string (JSON)
-            if (!success) {
-                msg = new String(recv);
-                //this will require deserializing twice, once to get the class type,
-                //and once to serialize into the proper class type.
-                HashMap val = mapper.readValue(msg, HashMap.class);
-                String c = (String) val.get("class");
-                TuioPoint pt = null;
-                switch (c) {
-                    case "TUIO.TuioCursor":
-                        pt = mapper.readValue(msg, TUIO.TuioCursor.class);
-                        break;
-                    case "TUIO.TuioBlob":
-                        pt = mapper.readValue(msg, TUIO.TuioBlob.class);
-                        break;
-                    case "TUIO.TuioObject":
-                        pt = mapper.readValue(msg, TUIO.TuioObject.class);
-                        break;
-                }
-                //if success, process
-                //(we are ignoring Time messages in this case)
-                if (pt != null) {
-                    process(pt, md);
-                }
+            if (pt != null) {
+                process(pt, md);
             }
         }
     }
