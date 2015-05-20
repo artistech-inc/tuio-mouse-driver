@@ -43,4 +43,4 @@ To use the ZeroMqMouse driver:
  4. java -cp target/tuio-mouse-driver-1.1.3-SNAPSHOT.jar com.artistech.tuio.mouse.ZeroMqMouse &lt;ZMQ_PUB_HOST:PORT&gt;
 
 If using the [companion tuio-zeromq-publish application](https://github.com/artistech-inc/tuio-zeromq-publish), the default port used is 5565, so invokation would look similar to:
->java -cp target/tuio-mouse-driver-1.1.1-SNAPSHOT.jar com.artistech.tuio.mouse.ZeroMqMouse localhost:5565
+>java -cp target/tuio-mouse-driver-1.1.3-SNAPSHOT.jar com.artistech.tuio.mouse.ZeroMqMouse localhost:5565
