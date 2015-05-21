@@ -188,7 +188,7 @@ public class TuioProtoConverter implements ProtoConverter {
                             if (writeMethod != null && readMethod != null && targetProp.getReadMethod() != null) {
                                 boolean primitiveOrWrapper = ClassUtils.isPrimitiveOrWrapper(targetProp.getReadMethod().getReturnType());
 
-                                if (readMethod.getParameterCount() > 0) {
+                                if (readMethod.getParameterTypes().length > 0) {
                                     if (DeepCopy) {
                                         if (!Modifier.isAbstract(targetProp.getPropertyType().getModifiers())) {
                                             //basically, ArrayList
