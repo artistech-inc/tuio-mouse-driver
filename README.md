@@ -34,7 +34,7 @@ Transmission of the TUIO objects via ZeroMQ is provided by 3 different mechanism
  2. JSON Serialization (using [Jackson](https://github.com/FasterXML/jackson))
  3. [Google Protocol Buffer](https://developers.google.com/protocol-buffers/)
 
-Since this is the subscribing client, it is unknown how the object has been serialized by the publisher, and so all 3 mechanisms will be attemted for deserialization.
+Since this is the subscribing client, it is unknown how the object has been serialized by the publisher, and so all 3 mechanisms will be attempted for deserialization.
 
 ###Execution
 To use the ZeroMqMouse driver:
