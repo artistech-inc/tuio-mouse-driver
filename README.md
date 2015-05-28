@@ -8,8 +8,9 @@ This is small code examples of how to drive a mouse using a [TUIO](http://tuio.o
 To use the mouse driver:
  1. git clone https://github.com/artistech-inc/tuio-mouse-driver.git
  2. cd tuio-mouse-driver
- 3. mvn package
- 4. java -jar target/tuio-mouse-driver-1.1.3-SNAPSHOT.jar
+ 3. git checkout v1.1.3
+ 4. mvn package
+ 5. java -jar target/tuio-mouse-driver-1.1.3.jar
 
 ##ZeroMQ Support
 Also available in this module is the ability to subscribe to TUIO broadcasts via [ZeroMQ](http://zeromq.org/).
@@ -39,8 +40,9 @@ Since this is the subscribing client, it is unknown how the object has been seri
 To use the ZeroMqMouse driver:
  1. git clone https://github.com/artistech-inc/tuio-mouse-driver.git
  2. cd tuio-mouse-driver
- 3. mvn package
- 4. java -cp target/tuio-mouse-driver-1.1.3-SNAPSHOT.jar com.artistech.tuio.mouse.ZeroMqMouse &lt;ZMQ_PUB_HOST:PORT&gt;
+ 3. git checkout v1.1.3
+ 4. mvn package
+ 5. java -cp target/tuio-mouse-driver-1.1.3.jar com.artistech.tuio.mouse.ZeroMqMouse &lt;ZMQ_PUB_HOST:PORT&gt;
 
 If using the [companion tuio-zeromq-publish application](https://github.com/artistech-inc/tuio-zeromq-publish), the default port used is 5565, so invokation would look similar to:
->java -cp target/tuio-mouse-driver-1.1.3-SNAPSHOT.jar com.artistech.tuio.mouse.ZeroMqMouse localhost:5565
+>java -cp target/tuio-mouse-driver-1.1.3.jar com.artistech.tuio.mouse.ZeroMqMouse localhost:5565
