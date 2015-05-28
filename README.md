@@ -16,7 +16,7 @@ To use the mouse driver:
 Also available in this module is the ability to subscribe to TUIO broadcasts via [ZeroMQ](http://zeromq.org/).
 
 ###Dependencies
-ZeroMQ support is dependent on available native libraries.  When compiling, maven will search for these files and provide any jar depenedencies suitable.
+ZeroMQ support is dependent on available native libraries.  When compiling, maven will search for these files and provide any jar dependencies suitable.
  1. Linux:
    1. Searches for /usr/lib/libjzmq.so
    2. If this file exists, the dependency jar [jzmq.jar](https://github.com/zeromq/jzmq) is imported.
@@ -28,7 +28,7 @@ ZeroMQ support is dependent on available native libraries.  When compiling, mave
 
 The two jar files provide identical support.  However, the [jzmq.jar](https://github.com/zeromq/jzmq) file uses JNI to provide faster support where [jeromq.jar](https://github.com/zeromq/jeromq) is a pure java implementation.  The jzmq.jar requires libjzmq.so which in turn requires libzmq.so to be available.
 
-###ZeroMQ Transmssion/Serialization
+###ZeroMQ Transmission/Serialization
 Transmission of the TUIO objects via ZeroMQ is provided by 3 different mechanisms.
  1. Java Object Serialization
  2. JSON Serialization (using [Jackson](https://github.com/FasterXML/jackson))
