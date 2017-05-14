@@ -4,7 +4,7 @@ This is small code examples of how to drive a mouse using a [TUIO](http://tuio.o
  2. Two figers is for left-click.  Mouse down is maintained while the second finger is pressed.
  3. Three fingers is right-click.  Mouse up is immediately called, no need to keep finger down.
 
-###Execution
+### Execution
 To use the mouse driver:
  1. git clone https://github.com/artistech-inc/tuio-mouse-driver.git
  2. cd tuio-mouse-driver
@@ -12,10 +12,10 @@ To use the mouse driver:
  4. mvn package
  5. java -jar target/tuio-mouse-driver-1.1.3.jar
 
-##ZeroMQ Support
+## ZeroMQ Support
 Also available in this module is the ability to subscribe to TUIO broadcasts via [ZeroMQ](http://zeromq.org/).
 
-###Dependencies
+### Dependencies
 ZeroMQ support is dependent on available native libraries.  When compiling, maven will search for these files and provide any jar dependencies suitable.
  1. Linux:
    1. Searches for /usr/lib/libjzmq.so
@@ -28,7 +28,7 @@ ZeroMQ support is dependent on available native libraries.  When compiling, mave
 
 The two jar files provide identical support.  However, the [jzmq.jar](https://github.com/zeromq/jzmq) file uses JNI to provide faster support where [jeromq.jar](https://github.com/zeromq/jeromq) is a pure java implementation.  The jzmq.jar requires libjzmq.so which in turn requires libzmq.so to be available.
 
-###ZeroMQ Transmission/Serialization
+### ZeroMQ Transmission/Serialization
 Transmission of the TUIO objects via ZeroMQ is provided by 3 different mechanisms.
  1. Java Object Serialization
  2. JSON Serialization (using [Jackson](https://github.com/FasterXML/jackson))
@@ -36,7 +36,7 @@ Transmission of the TUIO objects via ZeroMQ is provided by 3 different mechanism
 
 Since this is the subscribing client, it is unknown how the object has been serialized by the publisher, and so all 3 mechanisms will be attempted for deserialization.
 
-###Execution
+### Execution
 To use the ZeroMqMouse driver:
  1. git clone https://github.com/artistech-inc/tuio-mouse-driver.git
  2. cd tuio-mouse-driver
